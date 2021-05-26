@@ -1,0 +1,28 @@
+.head1{
+    font-size: 60px;
+    color: #834E62;
+    font-weight: bold;
+    text-align:center
+}
+.head2{
+    font-size: 20px;
+    color: #8C6057;
+}
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+a:link{
+    color: #834E62;
+}
+a:visited{
+    color: #AD7149;
+}
+a:hover{
+    color: #F6BC45;
+}
+html{
+    background-color: #FEF2CC;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
