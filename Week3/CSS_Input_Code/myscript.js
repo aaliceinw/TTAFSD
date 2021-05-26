@@ -27,7 +27,7 @@ n3 = 12;
 // display output
 document.write("This is how to display javascript output. ");
 document.writeln("")
-document.write("My Name "+n1);
+document.write("My Name Is "+n1);
 document.writeln("");
-document.writeln("hello"); //newline
-document.writeln("bye");
+document.writeln("Hello!"); //newline
+document.writeln("Bye!");
