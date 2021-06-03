@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript loop demo</title>
+    </head>
+    <body>
+        <pre>
+            <script>
+                //example : while loop
+                document.writeln("=============while loop================");
+                //var i=11;
+                var i=16;
+                while(i<=15)
+                {
+                   // execute code until condition true
+                   document.writeln(i); 
+                   i++;// increment i with 1
+                }
+                /*
+                case 1: i=11;
+                1. condition (11<=15): true-----> 11  (i=12)
+                2. condition (12<=15): true-----> 12  (i=13)
+                3. condition (13<=15): true-----> 13  (i=14)
+                4. condition (14<=15): true-----> 14  (i=15)
+                5. condition (15<=15): true-----> 15  (i=16)
+                6. condition (16<=15): false (stop)
+
+                case 2: i=16;
+                1. condition (16<=15): false (stop)
+                */
+               
+                //example : do_while loop
+                document.writeln("=============do_while loop================");
+
+               // i = 11;
+               i = 16;
+                do
+                {
+                    // execute code until condition true
+                   document.writeln(i); 
+                   i++;// increment i with 1
+                }
+                while(i<=15);
+
+                /*
+                case 1 : i =11;
+                1. 11 : (i = 12) , condition(12<=15): true
+                2. 12 : (i = 13) , condition(13<=15): true
+                3. 13 : (i = 14) , condition(14<=15): true
+                4. 14 : (i = 15) , condition(15<=15): true
+                5. 15 : (i = 16) , condition(16<=15): false 
+                stop
+
+                case 2 : i = 16;
+                1. 16 : (i =17) , condition(17<=15): false 
+                stop
+
+                */
+
+                // example : for loop
+                document.writeln("========================For Loop ============================");
+
+                // for(init ; condition ; step)
+                // 1. init : var i = 1;
+                // 2. condition : i < 10 ;
+                // 3. code
+                // 4. step : i++; // i increament by 1 
+
+                for ( var i = 1 ; i < 10 ; i++ )
+                {
+                    // code
+                    document.writeln("Count :"+i);
+                }
+
+                /*
+                    step 1. i=1 | (1 < 10) : true | Count : 1 | i = 2
+                    step 2. ----| (2 < 10) : true | Count : 2 | i = 3
+                    step 3. Repeat step 2, until condition false
+                            ----| (9 < 10) : true | Count : 9 | i =10
+                            ----| (10 < 10) : false (stop)
+                */
+
+            </script>
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript if_else demo</title>
+    </head>
+    <body>
+        <pre>
+            <script>
+                // example : if
+                //var a=20;
+                var a = 5;
+                document.writeln('Before if');
+                if(a>10)
+                {
+                    // if condition "true" then execute
+                    document.writeln('Value of a is greater than 10');
+                }
+                document.writeln('after if');
+
+                // example : if _ else
+                document.writeln("------------------------------------------------");
+                
+                document.writeln('before if_else');
+                if(a>10)
+                {
+                    // if condition "true" then execute
+                    document.writeln('Value of a is greater than 10');
+                }
+                else
+                {
+                    //if condition "false" then execute
+                    document.writeln("Value of a is not greater than 10");
+                }
+                document.writeln('after if_else');
+
+                // example : if_else if
+                document.writeln("------------------------------------------------");
+                document.writeln('before if_else if');
+                if(a==10)
+                {
+                    document.writeln("a is equal to 10");
+                }
+                else if(a==20)
+                {
+                    document.writeln("a is equal to 20");
+                }
+                else if(a==15)
+                {
+                    document.writeln("a is equal to 15");
+                }
+                else
+                {
+                    document.writeln("a is not equal to 10, 20, 15");
+                }
+                document.writeln('after if_else if');
+            </script>
+        </pre>
+    </body>
+</html>

@@ -5,7 +5,8 @@ var data1;
 var data2,data3,data4;
 
 // store name or number
-var name = "Vaibhavi"; // String => ""
+var firstname = "Joan"; // String => ""
+var lastname = "Laine"
 var number = 100; // Number
 
 //method 1
@@ -21,8 +22,9 @@ n3 = 12;
 //-------------------------
 
 // display output
-document.write("Hi Students !");
-document.write("My Name = "+name);
+document.write("Hi Students ! ");
+document.write("My Name !  "+firstname);
+document.write("My surname !  "+lastname);
 document.writeln("");
 document.writeln("hello");//new line
 document.writeln("bye");
@@ -142,166 +144,32 @@ document.writeln("10 is greater than 2 = "+result);
 check = !result; // !false => true
 document.writeln("after negation :"+check);
 
+//display output my username is admin AND my password is admin
+document.writeln("My Username is :"+username);
+document.writeln("My Passwword is :"+password);
+document.writeln("Is User Valid? :"+check);
 
+//display output input1 is v AND input2 is v123
+document.writeln("My Username is:"+input1);
+document.writeln("My Password is:"+input2);
+document.writeln("Is User Valid?: "+check);
 
-//1.if -> only true
-/*Q. Check age of driver */
-var age = 17;
-if(age >=18)
-{
-    document.writeln("Can drive a car");
-}
+//display output username is admin OR input1 is v
+document.writeln("My Username is :"+username);
+document.writeln("My Usermame is :"+input1);
+document.writeln("Is User Valid? :"+check);
 
-//2. if_else
-age = 17;
-if(age >=18)
-{
-document.writeln("Can drive a car");
-}
-else{
-    document.writeln("Can not drive a car")
-}
+//display output password is admin or input2 is v123
+document.writeln("My Password is :"+input2);
+document.writeln("My Password is :"+password);
+document.writeln("Is User Valid?: "+check);
 
-/* check username and password and print message */
-var username = "vai";
-var password = "v123";
+//display output username is admin AND password is input2
+document.writeln("My Username is :"+username);
+document.writeln("My Password is :"+input2);
+document.writeln("Is User Valid?: "+password==password);
 
-if(username=="admin" && password=="admin123")
-{
-    //ok-> login success code
-    document.writeln("Welcome to my website :"+username);
-}
-else(
-    //not ok -> logic fail code
-    document.writeln("Oops... something went wrong !")
-)
-
-// if_ellse_if ladder
-/*Q. Check score of studer and give grades
-90-100 = A+
-80-90 = A
-70-80 = B
-60-70 = C
-50-60 = D
-<50 = fail
-*/
-//input = 34
-/*if(cond1){
-
-}
-
-else if(cond2){
-
-}
-else if(cond3){
-
-}
-
-else if(cond4){
-
-}
-
-else{
-
-}
-*/
-
-//2. switch_case
-var choice = 6; 
-switch(choice)
-{
-    case 1:
-        document.writeln("I am in case 1");
-        break;
-    case 2:
-        document.writeln("I am in case 2");
-        break;
-    case 3:
-        document.writeln("I am in case 3");
-        break;
-        default:
-            document.writeln("Please give valid choice");
-}
-
-/*Q. create calculator -> + - * / % */
-/*
-num1 = 10;
-num2 = 2;
-document.writeln("1. Addition");
-document.writeln("1. Difference");
-input = 1;
-switch (input)
-{
-    case 1:
-        document.writeln("1. Addition :"+(num1 +num2));
-        break;
-}
-*/
-
-//=========================
-
-/*  unary operator:
-1. ++ : increment -> by 1
-2. -- : decrement -> by 1
-
-eg. 
-num = 10;
-document.writeln(num++); // 11
-
-*/
-
-//3. while loop -> true  -> keep running
-//Q.print 1-10
-var i = 1;
-while(i<=10)// 11 <=10
-{
-    document.writeln(i); // 1 2 3 4 5 6 7 8 9 10
-    i = i+2;//11
-}
-document.writeln("========================");
-
-//Q.print all even number from 1-10
-// even number -> number 2 == 0;
-
-var input =1;
-while(input<=10)
-{
-    if(input % 2 == 0)
-    {document.writeln(input);//2 4 6 8 }
-
-    }input++;
-}
-
-document.writeln("========================");
-//4. do_while 
-//Q.print 1-10
-var i = 11;
-do{
-    document.writeln(i);// 11
-    i++; //12 <= 10
-}while(i <= 10); 
-
-
-
-document.writeln("========================");
-// 5. for loop
-/*
-for(init ; condition ; step)
-{
-    //code
-}
-
-flow of execution:
-1. init (one time)
-2. condition
-3. code
-4. step
-5. go to 2
-
-*/
-//Q. print 1-10
-for(var i = 1 ; i <=10 ; i++)
-{
-    document.writeln(i);//1 2 ...
-}
-
+//display output username is input2 or password is username
+document.writeln("My Username is :"+input2);
+document.writeln("My Username is :"+username);
+document.writeln("Is User Valid?: "+username==username);
