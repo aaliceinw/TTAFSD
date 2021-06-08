@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Function | event</title>
+        <script src="jsdemo1script.js"></script>
+    </head>
+    <body>
+        <input type="submit" 
+               value="Display"
+               onclick="display()"/>
+        <br/>
+        <input type="button"
+               value="Cube of Number"
+               onclick="cube(3)"/>
+
+        <hr/>
+        <form>
+            Enter Name:
+            <input type="text"
+                    value=""
+                    name="uname"
+                    id="t1"/>
+            <p id="msg"
+            style="color: red;"></p>        
+            <br/><br/>
+            <input type="button"
+                    value="Show"
+                    onclick="show()"/>
+        </form> 
+        <hr/>
+        Enter Number 1:
+        <input type="text"
+                name="num1"
+                id="n1"
+                onblur="changeColor(this)"/>
+        <br/>
+        Enter Number 2:
+        <input type="text"
+                name="num2"
+                id="n2"
+                onblur="changeColor(this)"/>
+        
+        <br/>
+        <input type="button"
+                value="+"
+                onclick="add()"/>
+        <br/>
+        Result:
+        <input type="text"
+                name="result"
+                id="r1"/>
+    </body>
+</html>
