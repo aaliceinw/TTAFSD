@@ -1,4 +1,4 @@
-//Defining function to (Please enter first name)
+//Defining function to enter first name
 function show()
 {
     {
@@ -16,7 +16,7 @@ function show()
 }
 
 }
-//Defining function to (Please enter last name)
+//Defining function to enter last name)
 function show()
 {
     {
@@ -34,6 +34,7 @@ function show()
 }
 }
 
+//Defining function to enter password
 {
     {
     var password = document.getElementById("pw1").value;
@@ -50,6 +51,7 @@ function show()
 }
 }
 
+//Defining function to validate password
 {
     {
     var vpassword = document.getElementById("pw2").value;
