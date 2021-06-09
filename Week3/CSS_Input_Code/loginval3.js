@@ -1,17 +1,19 @@
 //Defining a ffunction to display error message
+//q. where do I define elemid in html file?
 function printError(elemID, hintMsg) {
     document.getElementById(elemID).innerHTML = hintmsg;
 
 }
 
 //defining a function to validate form
-function validateForm() {
+
+//function validateForm() {
     //Retrieving the value of form elements
-    var firstname = document.loginForm.firstname.value;
-    var lastname = document.loginForm.lastname.value;
-    var pw1 = document.loginForm.pw1.value;
-    var pw2 = document.loginForm.pw2.value;
-    var message = document.loginForm.value;
+  //  var firstname = document.loginForm.firstname.value;
+  //  var lastname = document.loginForm.lastname.value;
+  //  var pw1 = document.loginForm.pw1.value;
+  //  var pw2 = document.loginForm.pw2.value;
+  //  var message = document.loginForm.value;
     
 }
 
