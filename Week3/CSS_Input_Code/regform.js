@@ -27,7 +27,7 @@ function validateForm() {
  
     // Validate first name
  if(fname == "") {
-    printError("nameErr", "Please enter your first name");
+    printError("fnameErr", "Please enter your first name");
 } else {
     var regex = /^[a-zA-Z\s]+$/;                
     if(regex.test(fname) === false) {
@@ -84,7 +84,7 @@ function validateForm() {
     // Regular expression for basic password validation
     var regex = /^\S+@\S+\.\S+$/;
     if(regex.test(pw1) === false) {
-        printError("pw1Err", "Passsword must 8 characters minimum ");
+        printError("pw1Err", "Passsword must be 8 characters minimum ");
     } else{
         printError("pw1Err", "");
         pw1Err = false;
@@ -100,11 +100,11 @@ function validateForm() {
 }
 
     // Validate gender
-    if(gender1 == "") {
-        printError("gender1Err", "Please select your gender");
+    if(gender == "") {
+        printError("genderErr", "Please select your gender");
     } else {
-        printError("gender1Err", "");
-        gender1Err = false;
+        printError("genderErr", "");
+        genderErr = false;
     }
 
    // Prevent the form from being submitted if there are any errors
