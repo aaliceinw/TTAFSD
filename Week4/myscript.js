@@ -322,3 +322,74 @@ for(var i = 1 ; i <= 10 ; i++)
 
 
 */ 
+
+
+
+
+
+/*Q. create calculator -> + - * / % */
+/*
+num1 = 10;
+num2 = 2;
+document.writeln("1. Addition");
+document.writeln("2. Difference");
+input = 1;
+switch(input)
+{
+    case 1:
+        document.writeln("Addition :"+(num1 + num2));
+        break;
+}
+*/
+
+//=========================
+
+/* Practice Q1 -Create Calculator  -> + - * / % */ 
+var result;
+var num1, num2;
+result = num1,num2;
+
+/* 1 - addition*/
+num1 = 10;
+num2 = 2;
+result = 10 + 2;
+document.writeln("Addition is "+result);
+document.writeln(num1+"+"+num2+ "="+result);
+
+/* 2 - difference*/
+
+num1 = 17
+num2 = 5
+
+document.writeln("Difference :"+(num1 - num2));
+
+
+input = 1
+
+var + - * / %;
+
+
+switch(input)
+{
+    case 1:
+        document.writeln("Addition :"+(num1 + num2));
+        break;
+    case 2:
+        document.writeln("Difference :"+(num1 - num2));
+        break;
+    case 3:
+        document.writeln("Multiply :"+(num1 * num2));
+        break:
+    case 4:
+        document.writeln("Division :"+(num1 / num2));
+        break;
+    case 5:
+        document.writeln("Remainder :"+(num1 % num2));
+        break;
+
+    default:
+        document.writeln("Select Operator");
+}
+
+//=========================
+
