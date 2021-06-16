@@ -9,7 +9,7 @@ password varchar(100),
 salary double
 );
 
-drop table members
+drop table members;
 create table members(
 mid int primary key auto_increment,
 firstName varchar(100),
