@@ -1,10 +1,3 @@
-
-/**
- *
- * @author joanlaine
- */
-
-
 public class Employee {
   
     int eid;
@@ -12,14 +5,18 @@ public class Employee {
     String address;
     double salary;
     
-      public Employee(int eid,String ename, String address, double Salary) {
+
+    public static void Employee(String[] args) {
+        
+    }
+    
+public Employee(int eid,String ename, String address, double Salary) {
         this.eid = -1;
         this.ename ="NA";
         this.address ="NA";
         this.salary = 0.0;
-        
-}//constructor
-  //create getter/setter here
+}      
+   
 
     public int getEid() {
         return eid;
@@ -52,6 +49,8 @@ public class Employee {
     public void setSalary(double salary) {
         this.salary = salary;
     }
-      
-}//class
+
+//
+
+}//main
 
