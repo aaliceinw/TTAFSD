@@ -1,14 +1,12 @@
 
 
 public class EMain {
-    
-    
-    
+     
         public static void main(String[] args) {
               //object using default const. 
        
-        Employee e1 = new Employee();//-1 NA -1.0
         
+        Employee e1 = new Employee();
         System.out.println("Employee 1");
         
         e1.setEid(101);
@@ -23,7 +21,7 @@ public class EMain {
         System.out.println("=================================");
         
         
-        Employee e2 = new Employee();//-1 NA -1.0
+        Employee e2 = new Employee();
         
         System.out.println("Employee 2");
         
@@ -39,7 +37,7 @@ public class EMain {
         System.out.println("=================================");
         
         
-        Employee e3 = new Employee();//-1 NA -1.0
+        Employee e3 = new Employee();
         
         System.out.println("Employee 3");
         

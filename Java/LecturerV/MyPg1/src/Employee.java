@@ -4,17 +4,21 @@ public class Employee {
     String ename;
     String address;
     double salary;
-    
-
-    public static void Employee(String[] args) {
-        
+   
+//default constructer
+    public Employee() {
+        this.eid = -1;
+        this.ename = "john";
+        this.address ="345 any street";
+        this.salary = 4500.0;
     }
     
+ //parameterised constructer   
 public Employee(int eid,String ename, String address, double Salary) {
-        this.eid = -1;
-        this.ename ="NA";
-        this.address ="NA";
-        this.salary = 0.0;
+        this.eid = eid;
+        this.ename = ename;
+        this.address = address;
+        this.salary = salary;
 }      
    
 
