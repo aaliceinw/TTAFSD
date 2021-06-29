@@ -3,15 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+//import java.io.IOException;
+//import java.io.PrintWriter;
+//import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+//import javax.servlet.http.HttpServlet;
+//import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,7 +48,7 @@ String uname, upass;
             uname = request.getParameter("uname");
             upass = request.getParameter("upass");
             
-            if(uname.equals(uname))
+            if(uname.equals("Admin") && upass.equals("admin123"))
             {
                 //login ok
                                 
@@ -51,18 +58,18 @@ String uname, upass;
                 
                 //out.print("Welcome "+uname);
                 // goto profile page
-                request.getRequestDispatcher("TestHome.jsp").include(request, response);
+                request.getRequestDispatcher("profile.jsp").include(request, response);
                 
             }
             else
             {
-                //login not ok
-                out.print("Opps..sorry.");
-                
+                out.print("Sorry.. cannot login");
+                out.print("<br/>");
+                out.print("Check user name or password");
                 //request Dispatcher
                 //forward-> forward page content
                 //include-> include page content
-                request.getRequestDispatcher("login4.jsp").forward(request, response);
+                request.getRequestDispatcher("login4.jsp").include(request, response);
                 
             }
            

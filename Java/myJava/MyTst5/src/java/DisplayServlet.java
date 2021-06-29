@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author joanlaine
  */
-public class Display4Servlet extends HttpServlet {
+public class DisplayServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,10 +32,15 @@ public class Display4Servlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             /* TODO output your page here. You may use following sample code. */
-          out.print("<center><h3>Welcome to this website<h3><center>");
-            String uname = request.getParameter("uname");
-           out.print("Welcome "+uname);
-           
+           out.print("<center><h3>Welcome This Website/h3></center>");
+            
+        String uname = request.getParameter("uname");
+        out.print("Welcome "+uname);
+        
+        String upass = request.getParameter("upass");
+        out.print("Your password is: "+upass);
+        
+        
         } finally {
             out.close();
         }

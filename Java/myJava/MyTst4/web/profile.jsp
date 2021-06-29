@@ -33,10 +33,10 @@
           %>
         
     <center>
-        <h1/>Discover World Tours</h1> 
+        <h1/>World Class Tours</h1> 
   </center>
     <hr/>
-    <p> buy your book</p>
+    <p> Book your trip today.</p>
     <hr/>
     <form action="logout">
         <input type="submit" value="Logout" />

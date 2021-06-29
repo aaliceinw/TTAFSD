@@ -16,12 +16,10 @@
         <h2>Hello World Test4!</h2>
         <hr/>
         
-        <form  action=check method="post">
-            Username: <input type="text" name="uname" value="" />
-            <br/>
-            Password:<input type="password" name="upass" value="" />
-            <br/>
-            <input type="submit" value="Login" />
+        <form  action="profile" name="myform">
+            <input type="text" name="uname" value="" />
+        <br/>
+        <input type="submit" value="Show" />
             <input type="reset" value="Clear" />
        
         </form>
