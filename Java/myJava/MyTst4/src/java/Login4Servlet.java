@@ -24,7 +24,7 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author joanlaine
  */
-@WebServlet(urlPatterns = {"/Login4Servlet"})
+
 public class Login4Servlet extends HttpServlet {
 String uname, upass;
     /**

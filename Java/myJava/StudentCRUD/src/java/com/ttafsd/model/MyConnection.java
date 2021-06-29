@@ -10,9 +10,10 @@ public class MyConnection {
         Connection con = null;
         try
         {
-        String URL = "jdbc:mysql://localhost:3306/tta";//DB location
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String URL = "jdbc:mysql://localhost:3306/ttafsd";//DB location;//DB location
         String user = "root";//DB user name
-        String pwd = "root";//DB password
+        String pwd = "NSinuk@cv4";//DB password
         
         con = DriverManager.getConnection(URL , user , pwd);           
         }//try ends

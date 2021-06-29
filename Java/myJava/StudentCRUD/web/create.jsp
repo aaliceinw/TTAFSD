@@ -19,26 +19,26 @@
     
     <!create form for student records-->
     
-    <form action="" method="get">
+    <form action="create" method="get">
         <center>
         <table border="5">
            
-                <tr>
+                 <tr>
                     <td>Student ID:</td>
-                    <td><input type="text" name="sid" value="" /></td>
+                    <td><input type="text" name="sid" value="" placeholder="Record Number"/></td>
                 </tr>
                 <tr>
                     <td>First Name:</td>
-                    <td><input type="text" name="fname" value="" /></td>
+                    <td><input type="text" name="firstname" value="" placeholder="First Name" /></td>
                 </tr>
                 <tr>
                     <td>Last Name:</td>
-                    <td><input type="text" name="lname" value="" /></td>
+                    <td><input type="text" name="lastname" value="" placeholder="Last Name"/></td>
                 </tr>
                 </tr>
                 <tr>
                     <td>Score:</td>
-                    <td><input type="text" name="Score" value="" /></td>
+                    <td><input type="text" name="score" value="" placeholder="Score" /></td>
                 </tr>
                  <tr>
                      <td><input type="submit" value="Submit" /></td>

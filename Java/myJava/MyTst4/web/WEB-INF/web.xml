@@ -6,7 +6,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Login4Servlet</servlet-name>
-        <url-pattern>/LoginForm4</url-pattern>
+        <url-pattern>/Profile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

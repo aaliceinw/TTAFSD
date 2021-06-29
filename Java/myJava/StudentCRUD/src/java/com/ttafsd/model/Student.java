@@ -57,5 +57,13 @@ public class Student {
     public void setScore(int score) {
         this.score = score;
     }
+
+    String getFirstName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    String getlLastName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

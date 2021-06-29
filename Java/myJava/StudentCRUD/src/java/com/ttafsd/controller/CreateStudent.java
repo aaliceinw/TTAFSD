@@ -3,20 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.ttafsd.controller;
+
+import com.ttafsd.model.StudentQuery;
+import com.ttafsd.model.Student;    
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author joanlaine
- */
-public class DisplayServlet extends HttpServlet {
 
+public class CreateStudent extends HttpServlet {
+int sid;
+String firstname;
+String lastname;
+int score;
+        
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -29,22 +35,36 @@ public class DisplayServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        
         try {
-            /* TODO output your page here. You may use following sample code. */
-           out.print("<center><h3>Welcome To This Website</h3></center>");
+            PrintWriter out = response.getWriter();
+            sid =Integer.parseInt(request.getParameter("sid"));
+            firstname =request.getParameter("firstname");
+            lastname =request.getParameter("lastname");
+            score =Integer.parseInt(request.getParameter("score"));
             
-        String uname = request.getParameter("uname");
-        out.print("Welcome "+uname);
+         //create Student object
+        Student s = new Student(sid,firstname,lastname, score);
+        //insert Student into DB
+        int r = StudentQuery.insert(s);   
         
-        String upass = request.getParameter("upass");
-        out.print("Your password is: "+upass);
+        if(r==1)
+        {
+         out.print("Student record saved");
+        }//if ends
         
+        else{
+            out.print("Error. Cannot save record");
+        }//else ends
         
-        } finally {
-            out.close();
-        }
-    }
+            
+        }//tryends
+         catch(Exception ex)
+        {
+            System.out.println("Servlet Error :"+ex);
+        }//catch ends
+       
+    }//processRequest ends
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
