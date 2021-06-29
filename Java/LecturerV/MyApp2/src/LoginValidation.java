@@ -14,7 +14,7 @@ public class LoginValidation {
             //2. Get Connection
             String URL = "jdbc:mysql://localhost:3306/tta";//DB location
             String user = "root";//DB user name
-            String pwd = "root";//DB password
+            String pwd = "NSinuk@cv4";//DB password
             
             Connection con = DriverManager.getConnection(URL , user , pwd); 
             

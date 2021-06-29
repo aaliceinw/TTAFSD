@@ -15,8 +15,9 @@
     <center>
         <h3> JSP Test</h3>
         <hr/>
-        <form name ="f1" action="AnyName" method="post"><br/>
-            User Name: <input type="text" name="email"/>
+        <form name ="uname" action="show" method="post"><br/>
+            User Name: <input type="text" name="username"/>
+            Email Address: <input type="text" name="email" value="" />
             <br/>
             <input type="submit" value="Display"/>
         </form>

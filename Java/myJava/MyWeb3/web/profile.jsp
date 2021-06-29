@@ -37,6 +37,10 @@
   </center>
     <hr/>
     <p> buy your book</p>
+    <hr/>
+    <form action="logout">
+        <input type="submit" value="Logout" />
+    </form>
     
     <%
         }

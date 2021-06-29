@@ -16,7 +16,9 @@
         <h1>Hello World!</h1>
         
         <form name="myForm" action="AnyName">
-            <input type="text" name="uname" value="" /> 
+          Your Name:  <input type="text" name="uname" value="" /> 
+          <br/>
+            Your Email: <input type="text" name="email" value="" />
             <br/>
             <input type="submit" value="Display" name="submit" />
         </form>

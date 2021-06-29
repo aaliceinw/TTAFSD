@@ -189,10 +189,8 @@ public class MyFrame2 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MyFrame2().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MyFrame2().setVisible(true);
         });
     }
 

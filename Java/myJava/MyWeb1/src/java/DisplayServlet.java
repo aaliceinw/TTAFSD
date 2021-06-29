@@ -38,7 +38,7 @@ public class DisplayServlet extends HttpServlet {
         out.print("Welcome "+uname);
         
         String email = request.getParameter("email");
-        out.print("Your email id: "+email);
+        out.print("Your email is: "+email);
         
         } finally {
             out.close();
