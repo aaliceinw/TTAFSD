@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class CreateStudent extends HttpServlet {
+public class DeleteStudent extends HttpServlet {
 int sid;
 String firstname;
 String lastname;
@@ -39,26 +39,21 @@ int score;
         try {
             PrintWriter out = response.getWriter();
             sid =Integer.parseInt(request.getParameter("sid"));
-            firstname = request.getParameter("firstname");
-            lastname = request.getParameter("lastname");
-            score =Integer.parseInt(request.getParameter("score"));
             
-        //create Student object
-        Student s = new Student(sid, firstname,lastname,score);
-        //create Student record DB
-        int r = StudentQuery.insert(s);   
+        //delete row from Student
+        int r =StudentQuery.delete(sid);
         
         if(r==1)
         {
-        out.print("Student record created succesfully");
-        request.getRequestDispatcher("display.jsp").include(request,response); 
+         out.print("Student record deleted");
+         request.getRequestDispatcher("display.jsp").include(request,response);
         }//if ends
         
-        else{
-            out.print("Error. Cannot save record");
-            request.getRequestDispatcher("display.jsp").include(request,response); 
+        else {
+            out.print("Error. Record does not exist");
+            request.getRequestDispatcher("delete.jsp").include(request,response); 
         }//else ends
-        
+     
             
         }//tryends
          catch(Exception ex)
@@ -106,5 +101,4 @@ int score;
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

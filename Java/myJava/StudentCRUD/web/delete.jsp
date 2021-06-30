@@ -4,6 +4,7 @@
     Author     : joanlaine
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,8 +12,42 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Delete Student</title>
     </head>
-    <body>
+     <center>
         <jsp:include page="master.html"/>
         <h1>Delete Students</h1>
-    </body>
+        
+        <!--
+        Create <form> accepting "student id",
+        on "submit button" call action "delete"
+        -->
+       
+        
+        
+ <form action="delete" method="get">
+       
+        <table border="5">
+           
+                 <tr>
+                    <td>Student ID:</td>
+                    <td><input type="text" name="sid" value="" placeholder="Record Number"/></td>
+                </tr>
+
+                 <tr>
+                     <td><input type="submit" value="Delete" /></td>
+                     <td><input type="reset" value="Clear" /></td>
+                </tr>
+                
+         
+        </table>
+
+        
+      
+    </form>
+  
+        
+        
+        
+ 
+       
+    </center>    
 </html>

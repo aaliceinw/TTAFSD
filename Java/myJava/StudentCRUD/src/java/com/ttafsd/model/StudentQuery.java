@@ -27,8 +27,8 @@ public class StudentQuery {
             PreparedStatement stmt = con.prepareStatement(qry);//query getting pre-compile
             //setting column values in student table
             stmt.setInt(1, s.getSid());
-            stmt.setString(2,s.getFirstName());
-            stmt.setString(3,s.getlLastName());
+            stmt.setString(2,s.getFirstname());
+            stmt.setString(3,s.getLastname());
             stmt.setInt(4, s.getScore());
             row_insert = stmt.executeUpdate();
         }//try ends
@@ -38,4 +38,47 @@ public class StudentQuery {
         }//catch ends
         return row_insert;
     }//insert ends
+
+//2. update -> int
+    public static int update(int sid , int up_score)
+    {
+        int row_update = 0;
+        try
+        {
+            Connection con = MyConnection.connect();//get connection
+            Statement stmt = con.createStatement();
+            
+            String qry = "update student set score="+up_score+" where sid="+sid;;
+            
+            row_update = stmt.executeUpdate(qry);
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Update Error :"+ex);
+        }
+        
+        return row_update;
+    }
+    
+    //3. delete -> int
+    public static int delete(int sid)
+    {
+        int row_delete = 0;
+        try
+        {
+            Connection con = MyConnection.connect();//get connection
+            Statement stmt = con.createStatement();
+            
+            String qry = "delete from student where sid="+sid;
+            
+            row_delete = stmt.executeUpdate(qry);
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Delete Error :"+ex);
+        }
+        
+        return row_delete;
+    }    
+    
 }//class ends

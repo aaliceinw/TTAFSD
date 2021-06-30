@@ -23,8 +23,6 @@ public class Student {
         this.lastname = lastname;
         this.score = score;
     }
-    
-    //generate getter and setter
 
     public int getSid() {
         return sid;
@@ -58,12 +56,5 @@ public class Student {
         this.score = score;
     }
 
-    String getFirstName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    String getlLastName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-}
+}   
+   

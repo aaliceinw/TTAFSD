@@ -1,16 +1,13 @@
 <%-- 
     Document   : display
-    Created on : 29 Jun 2021, 10:54:56
-    Author     : joanlaine
+    Created on : 29 Jun, 2021, 3:24:56 PM
+    Author     : vaibh
 --%>
 
-<%@page import="com.ttafsd.model.MyConnection"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.ResultSet"%>
-
-
-
+<%@page import="com.tta.model.MyConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,23 +15,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Display Student</title>
     </head>
-    <body><center>
+    <body>
+         <!--Using JSP tag :  include "master.html" page-->
         <jsp:include page="master.html"/>
         
-        <h1>Display Student List</h1>
-        
+        <h1>Display Student</h1>
         
         <!--Database code to display all records-->
         <%
-        try
-        {
-        Connection con = MyConnection.connect();//get connection
-        Statement stmt = con.createStatement();//create statement
-        String qry = "select * from student";//select query to display all records
-        ResultSet rs = stmt.executeQuery(qry);//execute query
-        %>
-        <!Database code to display all records in a table from ResultSet in browser>
-        <table  border="1" padding="10">
+            try
+            {
+                
+                Connection con = MyConnection.connect();//get connection
+                Statement stmt = con.createStatement();//create statement
+                String qry = "select * from student";//select query to display all records
+                ResultSet rs = stmt.executeQuery(qry);//execute query
+        %>   
+        <table border="1">
         <%    
                 //get one by one record from ResultSet
                 while(rs.next())
@@ -50,7 +47,7 @@
                     
                 }//while ends
         %>
-            </table>       
+        </table>        
         <%        
             }//try ends
             catch(Exception ex)
@@ -60,6 +57,5 @@
         
         %>
        
-    </center>   
     </body>
 </html>

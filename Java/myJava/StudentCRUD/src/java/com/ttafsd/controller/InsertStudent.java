@@ -5,68 +5,61 @@
  */
 package com.ttafsd.controller;
 
+import com.ttafsd.model.Student;
 import com.ttafsd.model.StudentQuery;
-import com.ttafsd.model.Student;    
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class CreateStudent extends HttpServlet {
+/**
+ *
+ * @author joanlaine
+ */
+public class InsertStudent extends HttpServlet {
 int sid;
-String firstname;
-String lastname;
+String first;
+String last;
 int score;
-        
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        PrintWriter out = response.getWriter();
         try {
-            PrintWriter out = response.getWriter();
+            /* TODO output your page here. You may use following sample code. */
             sid =Integer.parseInt(request.getParameter("sid"));
-            firstname = request.getParameter("firstname");
-            lastname = request.getParameter("lastname");
-            score =Integer.parseInt(request.getParameter("score"));
+            first = request.getParameter("firstname");
+            last = request.getParameter("lastname");
+ score =Integer.parseInt(request.getParameter("score"));
+ 
+ 
+      //create Student object
+     Student s = new Student(sid, first,last,score);
+     //create Student record DB
+     int r = StudentQuery.insert(s);   
+     
+     if(r==1)
+     {
+     out.print("Student record created succesfully");
+     request.getRequestDispatcher("display.jsp").include(request,response); 
+     }//if ends
+     
+     else{
+         out.print("Error. Cannot save record");
+         request.getRequestDispatcher("display.jsp").include(request,response); 
+     }//else ends
+     
+  
             
-        //create Student object
-        Student s = new Student(sid, firstname,lastname,score);
-        //create Student record DB
-        int r = StudentQuery.insert(s);   
-        
-        if(r==1)
-        {
-        out.print("Student record created succesfully");
-        request.getRequestDispatcher("display.jsp").include(request,response); 
-        }//if ends
-        
-        else{
-            out.print("Error. Cannot save record");
-            request.getRequestDispatcher("display.jsp").include(request,response); 
-        }//else ends
-        
             
-        }//tryends
-         catch(Exception ex)
-        {
-            System.out.println("Servlet Error :"+ex);
-        }//catch ends
-       
-    }//processRequest ends
+        } finally {
+            out.close();
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

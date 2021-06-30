@@ -12,6 +12,7 @@
         <title>Create Student</title>
     </head>
     <body style="background-color:powderblue;">
+    <center>
         <!using JSP tag : include "master.html" page-->
         <jsp:include page="master.html"/>
         
@@ -19,8 +20,8 @@
     
     <!create form for student records-->
     
-    <form action="create" method="get">
-        <center>
+    <form action="insert" method="get">
+       
         <table border="5">
            
                  <tr>
@@ -45,13 +46,13 @@
                      <td><input type="reset" value="Clear" /></td>
                 </tr>
                 
-       </center>     
+           
         </table>
 
         
-    </center>    
+        
     </form>
     
-    
+        </center>
     </body>
 </html>

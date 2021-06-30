@@ -1,28 +1,27 @@
+package com.ttafsd.controller;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ttafsd.controller;
 
+import com.ttafsd.model.Student;
 import com.ttafsd.model.StudentQuery;
-import com.ttafsd.model.Student;    
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class CreateStudent extends HttpServlet {
+public class UpdateStudent extends HttpServlet {
 int sid;
 String firstname;
 String lastname;
 int score;
-        
+
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,28 +34,24 @@ int score;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        try {
+       try {
             PrintWriter out = response.getWriter();
             sid =Integer.parseInt(request.getParameter("sid"));
-            firstname = request.getParameter("firstname");
-            lastname = request.getParameter("lastname");
             score =Integer.parseInt(request.getParameter("score"));
             
-        //create Student object
-        Student s = new Student(sid, firstname,lastname,score);
-        //create Student record DB
-        int r = StudentQuery.insert(s);   
+        //update Student score where sid = sid
+  
+        int r = StudentQuery.update(sid, score);   
         
         if(r==1)
         {
-        out.print("Student record created succesfully");
-        request.getRequestDispatcher("display.jsp").include(request,response); 
+         out.print("Student record updated succesfully");
+         request.getRequestDispatcher("display.jsp").include(request,response);
         }//if ends
         
         else{
-            out.print("Error. Cannot save record");
-            request.getRequestDispatcher("display.jsp").include(request,response); 
+            out.print("Error. Cannot update record");
+            request.getRequestDispatcher("update.jsp").include(request,response);
         }//else ends
         
             

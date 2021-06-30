@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	 version="3.0">
-    
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <servlet>
         <servlet-name>CreateStudent</servlet-name>
         <servlet-class>com.ttafsd.controller.CreateStudent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteStudent</servlet-name>
+        <servlet-class>com.ttafsd.controller.DeleteStudent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateStudent</servlet-name>
+        <servlet-class>com.ttafsd.controller.UpdateStudent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertStudent</servlet-name>
+        <servlet-class>com.ttafsd.controller.InsertStudent</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateStudent</servlet-name>
         <url-pattern>/create</url-pattern>
     </servlet-mapping>
-       
-    
+    <servlet-mapping>
+        <servlet-name>DeleteStudent</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateStudent</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertStudent</servlet-name>
+        <url-pattern>/insert</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
