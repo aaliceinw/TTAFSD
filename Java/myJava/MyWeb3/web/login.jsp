@@ -18,7 +18,7 @@
         <hr/><!-- comment -->
         <h2>User Login</h2>
         
-        <form action="check" method="POST">
+        <form action="login" method="POST">
             <table border="1" cellpadding="10">
               
                

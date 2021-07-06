@@ -14,10 +14,12 @@
     <body>
         <h1>Welcome to WebSite</h1>
         
-        <form action="DisplayLogin4" name="myForm">
-        <input type="text" name="uname" value="" />
-        <br/>
-        <input type="submit" value="Show" />
+        <form action="login" method=""post>
+        Name: <input type="text" name="uname" value=""/>
+        <br>
+        Password:<input type="password" name="upass">
+        <br>
+        <input type="submit" value="Login"  />
         </form> 
     </body>
 </html>

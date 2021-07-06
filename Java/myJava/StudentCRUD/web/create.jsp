@@ -36,7 +36,7 @@
                     <td>Last Name:</td>
                     <td><input type="text" name="lastname" value="" placeholder="Last Name"/></td>
                 </tr>
-                </tr>
+             
                 <tr>
                     <td>Score:</td>
                     <td><input type="text" name="score" value="" placeholder="Score" /></td>
