@@ -14,7 +14,7 @@
     <body style="background-color:powderblue;">
     <center>
         <!using JSP tag : include "master.html" page-->
-        <jsp:include page="master.html"/>
+        <jsp:include page="index.jsp"/>
         
     <h3>Student Create</h3>
     

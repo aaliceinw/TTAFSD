@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 5 Jul 2021, 11:26:14
+    Document   : displayRecords
+    Created on : 8 Jul 2021, 09:24:08
     Author     : joanlaine
 --%>
 
@@ -13,11 +13,5 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        
-        
-        
-        
-        
-        
     </body>
 </html>
