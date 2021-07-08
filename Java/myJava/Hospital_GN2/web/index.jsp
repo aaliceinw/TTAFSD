@@ -17,7 +17,7 @@
   <div class="header">
     <div id="logo"><a href="#"><img src="images/logo.png" alt="" width="162" height="54" border="0" /></a></div>
     <div class="right_header">
-      <div class="top_menu"> <a href="login.jsp" class="login">login</a> <a href="dreg.jsp" class="sign_up">Register</a> </div>
+      <div class="top_menu"> <a href="login.jsp" class="login">login</a> <a href="welcome.jsp" class="sign_up">Register</a> </div>
       <div id="menu">
         <ul>
           <li><a class="current" href="index.jsp">Home</a></li>

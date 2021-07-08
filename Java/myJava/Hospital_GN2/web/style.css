@@ -267,31 +267,6 @@ input, select {
 #s1:hover{
     background-color: darkcyan;
 }
-/*input[type="submit"] {
-    font-size: 110%;
-    font-weight: 100;
-    background: rgba(100, 30, 30, 0.555);
-    border-color: bisque;
-    box-shadow: 0 3px 0 rgba(100, 30, 30, 0.555);
-    color: #fff;
-    margin-top: 10px;
-    cursor: pointer;
-}
-input[type="submit"]:hover {
-    background: #71b601;
-    
-input[type="clear"] {
-    font-size: 110%;
-    font-weight: 100;
-    background: rgba(100, 30, 30, 0.555);
-    border-color: bisque;
-    box-shadow: 0 3px 0 rgba(100, 30, 30, 0.555);
-    color: #fff;
-    margin-top: 10px;
-    cursor: pointer;
-}
-input[type="clear"]:hover {
-    background: #71b601;
-}*/
+
 
 

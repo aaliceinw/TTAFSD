@@ -7,7 +7,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>login</title>
     </head>
-    <body>
+   <body>  
+   <center>
+    <div class=form>
+        
+   
         <form name="loginForm" onsubmit="return validateForm()" action="confirmation.php" method="post">
     <h2>Login Form</h2>
     <div class="row">
@@ -29,5 +33,8 @@
         <input type="submit" value="Submit">
     </div>
 </form>
+    </div>
+    </center>
     </body>
+    
 </html>
