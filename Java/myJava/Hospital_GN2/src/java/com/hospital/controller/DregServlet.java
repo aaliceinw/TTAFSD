@@ -51,7 +51,10 @@ public class DregServlet extends HttpServlet {
          degree = request.getParameter("degree");
          subject = request.getParameter("subject");
          password = request.getParameter("password");
-        
+        String cpass = request.getParameter("cpassword");
+         
+        if(password.equals(cpass)){
+            
         
         //create Doctor object
         Doctor d = new Doctor(docid,docName,phone, address, degree, subject, password);
@@ -61,18 +64,44 @@ public class DregServlet extends HttpServlet {
        if(r==1)
        {
            out.print("You have successfully registered");
-           request.getRequestDispatcher("dlog.jsp").forward(request,response);
+           request.getRequestDispatcher("doctorAccess.jsp").include(request,response);
        }
        else{
-           out.print("Error. Cannot save");
+           out.print("Registration unsuccessful. All fields must be completed.");
            request.getRequestDispatcher("dreg.jsp").include(request, response);
 
-    }//else ends
+    }}//else ends
+        else{
+           out.print("Password did not match");
+           request.getRequestDispatcher("dreg.jsp").include(request, response);  
+        }
+        
     }//try ends
-    
+        
         catch(Exception ex){
             System.out.println("Servlet Error :"+ex);
         }//catch ends
     }//process ends
+    
+     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
 
 }

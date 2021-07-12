@@ -1,45 +1,65 @@
 package com.hospital.controller;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * @author joanlaine
+ */
 
+public class DlogServlet extends HttpServlet {
 
-public class LoginServlet extends HttpServlet {
-    
-    String user, doctor, patient;
-   
-    
+    String docName, password;
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here. You may use following sample code. */
-          
-String user = request.getParameter("user");
+            /* TODO output your page here. You may use following sample code. */   
 
-if(user.equals("doctor")){
-    //doctor registration page
-request.getRequestDispatcher("dlog.jsp").forward(request, response);    
-}   
+        //get request parameters
+        docName = request.getParameter("docName");
+        password = request.getParameter("password");
+        
+        //validate user from DB
+        //user =Admin, password=admin123
+
+if(docName.equals("docName") && password.equals("password")){
+    //doctorlogin page
+request.getRequestDispatcher("doctorAccess.jsp").include(request, response);  
+} 
 else{
-  //patient regisration page
-request.getRequestDispatcher("dreg.jsp").forward(request, response);
-}    
-
-            
+  //doctor login page
+request.getRequestDispatcher("dlog.jsp").forward(request, response);
+out.print("Sorry Login or Password is incorrect. Please try again.");
+}//else ends
                 
-           
-            }
-         catch(Exception ex) {
+        } //try ends
+       catch(Exception ex) {
             out.close();
-        }
-    }
+        }//finally ends
+    }//class ends
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

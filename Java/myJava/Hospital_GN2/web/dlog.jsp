@@ -9,9 +9,9 @@
     <body>
      <center>
         <div class="form">
-        <form action="" method="post">
+        <form action="dlog" method="post">
 
-            <h1> Doctor Login Form<h1>
+            <h1> Doctor Login Form</h1>
 
             <table border="1">
 
@@ -34,6 +34,11 @@
 
 
         </table>
+
+
+
+
+
 </form>
   </div>  
     </center>

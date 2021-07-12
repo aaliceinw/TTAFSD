@@ -19,19 +19,19 @@
 
     <body>
 
-    <center>
+    
 
         <div class="form">
 
-        <form action="dreg.jsp" method="post">
+        <form action="dreg" method="post">
 
-            <h1> Doctor Registration Form<h1>
+            <h1> Doctor Registration Form</h1>
 
             <table border="1">
 
                 <tr>
 
-                    <td>Name:<input type="text" name="name" value="" /> </td>
+                    <td>Name:<input type="text" name="docName" value="" /> </td>
 
                     <td>ID: <input type="text" name="docid" value="" /></td>
 
@@ -62,18 +62,10 @@
                 </tr>
 
         </table>
-
 </form>
 
   </div>   
-
-<h2>Welcome to Hospital Management Systems.<h2>
-
-You have successfully registered.
-
-Please <a href="login.jsp">login</<a> to use the system.
-
-    </center>    
+        
 
     </body>
 
