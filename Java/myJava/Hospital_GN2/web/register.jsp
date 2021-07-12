@@ -22,7 +22,7 @@
       </div>-->
     </div>
   </div>
-        <form name="registrationForm" onsubmit="return validateForm()" action="confirmation.php" method="post">
+        <form name="registrationForm" onsubmit="return validateForm()" action="register" method="post">
     <h1>Register</h1>
 <br/><br/><br/>
     <div class="row">
@@ -32,26 +32,7 @@
             <label><input type="radio" name="user" value="patient"> Patient</label>
             <br/><br/>
              <input id="s1" type="submit" value="Submit">
-    <% //get current session
-          HttpSession se = request.getSession(false);
-          
-          String user =se.getAttribute("user").toString();//Object -> String
-          /*
-          true -> create new session
-          false -> use the current session  
-          */
-          //check session is new or current
-          if (user == null || doctor.equals("") || doctor.equals(null))
-          {
-              
-              out.print("You need to login first");
-              request.getRequestDispatcher("login.jsp").include(request, response);
-          }
-          else
-          {
-          %>
-             
-         <input id="s1" type="reset" value="Clear">
+
         </div>
         <div class="error" id="genderErr"></div>
     </div>

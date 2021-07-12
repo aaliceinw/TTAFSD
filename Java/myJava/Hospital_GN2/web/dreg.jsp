@@ -23,7 +23,7 @@
 
         <div class="form">
 
-        <form action="" method="post">
+        <form action="dreg.jsp" method="post">
 
             <h1> Doctor Registration Form<h1>
 
@@ -45,11 +45,11 @@
 
                     <td>Phone Number: <input type="text" name="phone" value="" /></td>
 
-                    <td>Specialty: <input type="text" name="Speciality" value="" /></td>
+                    <td>Speciality: <input type="text" name="subject" value="" /></td>
 
                     <td>Password: <input type="password" name="password" value="" /></td>
 
-                    <td>Confirm Password: <input type="text" name="cpassword" value="" /></td>
+                    <td>Confirm Password: <input type="password" name="cpassword" value="" /></td>
 
                 </tr>
 
@@ -66,6 +66,12 @@
 </form>
 
   </div>   
+
+<h2>Welcome to Hospital Management Systems.<h2>
+
+You have successfully registered.
+
+Please <a href="login.jsp">login</<a> to use the system.
 
     </center>    
 

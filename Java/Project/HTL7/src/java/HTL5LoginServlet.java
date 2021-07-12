@@ -1,42 +1,76 @@
-package com.hospital.controller;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-
-
-public class RegisterServlet extends HttpServlet {
-    
-    String user, doctor, patient;
-   
-    
+/**
+ *
+ * @author joanlaine
+ */
+@WebServlet(urlPatterns = {"/Login"})
+public class HTL5LoginServlet extends HttpServlet {
+   String upass, uname;
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
             /* TODO output your page here. You may use following sample code. */
-          
-String user = request.getParameter("user");
-
-if(user.equals("doctor")){
-    //doctor registration page
-request.getRequestDispatcher("dreg.jsp").forward(request, response);    
-}   
-else{
-  //patient regisration page
-request.getRequestDispatcher("preg.jsp").forward(request, response);
-}    
-
             
+            //get request parameters
+            uname = request.getParameter("uname");
+            upass = request.getParameter("upass");
+            
+            //validate user from DB
+            //user = Admin, password=admin123
+            if(uname.equals("Admin") && upass.equals("admin123"))
+            {
                 
-           
+                //create session -> HttpSession
+                HttpSession se =request.getSession();//create new session
+                
+                //set current user in session
+                se.setAttribute("myuser", uname);
+                
+                out.print("Welcome "+uname);
+                request.getRequestDispatcher("profile.jsp").include(request, response);
+                
             }
-         catch(Exception ex) {
+            else
+            {
+                out.print("Sorry.. cannot login");
+                out.print("<br/>");
+                out.print("Check user name or password");
+                
+                //request Dispatcher
+                //forward-> forward page content
+                //include-> include page content
+                request.getRequestDispatcher("profile.jsp").include(request, response);
+                
+            }
+           
+        }
+        
+        finally {
             out.close();
         }
     }

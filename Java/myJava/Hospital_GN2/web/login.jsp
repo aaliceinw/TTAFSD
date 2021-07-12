@@ -45,7 +45,7 @@
 
   </div>
 
-        <form name="registrationForm" onsubmit="return validateForm()" action="confirmation.php" method="post">
+        <form name="registrationForm" onsubmit="return validateForm()" action="login" method="post">
 
     <h1>Login Form</h1>
 
@@ -57,9 +57,9 @@
 
         <div class="form-inline">
 
-            <label><input type="radio" name="duser" value="doctor"> Doctor</label>
+            <label><input type="radio" name="user" value="doctor"> Doctor</label>
 
-            <label><input type="radio" name="puser" value="patient"> Patient</label>
+            <label><input type="radio" name="user" value="patient"> Patient</label>
 
             <br/><br/>
 

@@ -9,21 +9,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home</title>
     </head>
-    <body>     Welcome to Change Management Essentials!
+      <center>
+    
+    <body>     
+        <<h1>Welcome to Change Management Essentials!</h1>
             
          
-                <form  action = "LoginServlet" method="POST">
-                    
-                   Name: <input type="text" name="uname" value="" />
-                    Password <input type="password" name="upass" value="" />
-                    <br/>
-                    <input type="submit" value="Login" name="submit" />
-                    <br/>
-                    <input type="reset" value ="Clear" name="reset"/>
-                    
-                </form>
-         </center>
   
+        <a href="index.jsp" >Home</a>   
+        <a href="login.jsp">Login</a>  
+        <a href="display.jsp">Student Access</a>
+        <a href="logout.jsp">Sign Out</a>
+    </center>
+    
+    
+</body>
 </html>

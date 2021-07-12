@@ -9,14 +9,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>loginpage`</title>
     </head>
     <body>
-        <form action="check" method=post name="login">
-            User Name: <input type="text" name="uname" value="" />
+    <center>
+        <h2>Login Page</h2>
+        <hr/>
+        <table>
+        <form action="login.jsp" method=post name="login">
+            <td>User Name: <input type="text" name="uname" value="" /></td>
+            
+            <td>Password: <input type="password" name="upass" value="" /></td>
             <br/>
-            Password: <input type="password" name="upass" value="" />
+            <td><input type="submit" value="Login" name="submit" /></td>
+            <td><input type="reset" value ="Clear" name="reset"></td> 
         </form>
-    </body>
+        </table>    
+            </center>
     </body>
 </html>

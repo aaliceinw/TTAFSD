@@ -1,42 +1,47 @@
-package com.hospital.controller;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * @author joanlaine
+ */
+@WebServlet(urlPatterns = {"/HTL5DisplayServlet"})
+public class HTL5DisplayServlet extends HttpServlet {
 
-
-public class RegisterServlet extends HttpServlet {
-    
-    String user, doctor, patient;
-   
-    
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
             /* TODO output your page here. You may use following sample code. */
-          
-String user = request.getParameter("user");
-
-if(user.equals("doctor")){
-    //doctor registration page
-request.getRequestDispatcher("dreg.jsp").forward(request, response);    
-}   
-else{
-  //patient regisration page
-request.getRequestDispatcher("preg.jsp").forward(request, response);
-}    
-
+            out.print("<center><h3>Welcome to Servlet</h3></center>");
             
-                
-           
-            }
-         catch(Exception ex) {
+        String uname = request.getParameter("uname");
+        out.print("Welcome "+uname);
+        
+        
+        } finally {
             out.close();
         }
     }

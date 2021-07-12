@@ -1,6 +1,6 @@
 <%-- 
-    Document   : CMEHome
-    Created on : 27 Jun 2021, 14:36:04
+    Document   : profile.jsp
+    Created on : 10 Jul 2021, 12:41:56
     Author     : joanlaine
 --%>
 
@@ -12,10 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-    <center>
-        <h2> My Profile</h2>
+        <h1>HTL7 - Login and Logout - Welcome</h1>
         
-               <% //get current session
+       
+        
+ <% //get current session
           HttpSession se = request.getSession(false);
           
           String myuser =se.getAttribute("myuser").toString();//Object -> String
@@ -28,17 +29,20 @@
           {
               
               out.print("You need to login first");
-              request.getRequestDispatcher("login.jsp").include(request, response);
+              request.getRequestDispatcher("HTL5login.jsp").include(request, response);
           }
           else
           {
           %>
-        
-          
+<br><br>
 
-        
-        
-        
-    </center>
-    </body>
+<!--   
+           <h3>My Website </h3> 
+           
+        <form action="logout" method ="post">
+            
+         <input type ="submit" value = "logout">
+    </body>-->
+
+    
 </html>

@@ -3,32 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ttafsd.model;
+package com.tst.model;
 
 import java.sql.Connection;
-import java.sql.Statement;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 
 /**
  *
  * @author joanlaine
  */
-public class StudentQuery {
+public class MyuserQuery {
     
-    //1. Insert Student record
-    public static int insert(Student s)
+    //1.Insert Myuser record
+    public static int insert(Myuser u)
     {
         Connection con = MyConnection.connect();
         int row_insert = 0;
         try
         {
-            String qry = "insert into student(sid,firstName,lastName,score) values(?,?,?,?)";
+            String qry = "insert into myuser(uid,uname,upass) values(?,?,?)";
             PreparedStatement stmt = con.prepareStatement(qry);//query getting pre-compile
             //setting column values in student table
-            stmt.setInt(1, s.getSid());
-            stmt.setString(2,s.getFirstname());
-            stmt.setString(3,s.getLastname());
-            stmt.setInt(4, s.getScore());
+            stmt.setInt(1, u.getUid());
+            stmt.setString(2,u.getUname());
+            stmt.setString(3,u.getUpass());
             row_insert = stmt.executeUpdate();
         }//try ends
         catch(Exception ex)
@@ -38,29 +37,29 @@ public class StudentQuery {
         return row_insert;
     }//insert ends
 
-//2. update -> int
-    public static int update(int sid , int up_score)
-    {
-        int row_update = 0;
-        try
-        {
-            Connection con = MyConnection.connect();//get connection
-            Statement stmt = con.createStatement();
-            
-            String qry = "update student set score="+up_score+" where sid="+sid;;
-            
-            row_update = stmt.executeUpdate(qry);
-        }
-        catch(Exception ex)
-        {
-            System.out.println("Update Error :"+ex);
-        }
-        
-        return row_update;
-    }
+////2. update -> int
+//    public static int update(int sid , int up_score)
+//    {
+//        int row_update = 0;
+//        try
+//        {
+//            Connection con = MyConnection.connect();//get connection
+//            Statement stmt = con.createStatement();
+//            
+//            String qry = "update student set score="+up_score+" where sid="+sid;;
+//            
+//            row_update = stmt.executeUpdate(qry);
+//        }
+//        catch(Exception ex)
+//        {
+//            System.out.println("Update Error :"+ex);
+//        }
+//        
+//        return row_update;
+//    }
     
     //3. delete -> int
-    public static int delete(int sid)
+    public static int delete(int uid)
     {
         int row_delete = 0;
         try
@@ -68,7 +67,7 @@ public class StudentQuery {
             Connection con = MyConnection.connect();//get connection
             Statement stmt = con.createStatement();
             
-            String qry = "delete from student where sid="+sid;
+            String qry = "delete from myuser where uid="+uid;
             
             row_delete = stmt.executeUpdate(qry);
         }
@@ -81,3 +80,5 @@ public class StudentQuery {
     }    
     
 }//class ends
+
+ 
