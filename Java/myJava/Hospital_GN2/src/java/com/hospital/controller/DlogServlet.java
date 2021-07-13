@@ -9,6 +9,7 @@ package com.hospital.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,10 +19,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author joanlaine
  */
-
+@WebServlet(urlPatterns ={"/DlogServlet"})
 public class DlogServlet extends HttpServlet {
 
-    String docName, password;
+    String docid, password;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,23 +40,37 @@ public class DlogServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */   
 
         //get request parameters
-        docName = request.getParameter("docName");
+        docid = request.getParameter("docid");
         password = request.getParameter("password");
         
-        //validate user from DB
-        //user =Admin, password=admin123
-
-if(docName.equals("docName") && password.equals("password")){
-    //doctorlogin page
-request.getRequestDispatcher("doctorAccess.jsp").include(request, response);  
-} 
-else{
-  //doctor login page
-request.getRequestDispatcher("dlog.jsp").forward(request, response);
-out.print("Sorry Login or Password is incorrect. Please try again.");
-}//else ends
-                
+       //check valid user credentials
+        if(docid.equals(password))
+        
+        {
+         //login ok  
+         //Manage user session-> HttpSession
+            
+        HttpSession se = request.getSession();//create new session
+        se.setAttribute("doctor", docid);
+        
+        //out.print("Welcome "+docName);
+        //goto doctorAccess.jsp
+        request.getRequestDispatcher("doctorAccess.jsp").forward(request,response);
         } //try ends
+        else
+        {
+            //login not ok
+            out.print("Oops - User name or password invalid. Please try again.");
+                
+                //request Dispatcher
+                //forward-> forward page content
+                //include-> include page content
+                request.getRequestDispatcher("dlog.jsp").include(request, response);
+                
+            }//else ends
+           
+        }//tryends
+           
        catch(Exception ex) {
             out.close();
         }//finally ends

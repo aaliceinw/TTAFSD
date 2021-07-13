@@ -9,7 +9,7 @@
     <body>
      <center>
         <div class="form">
-        <form action="dlog" method="post">
+        <form action="DlogServlet" method="post">
 
             <h1> Doctor Login Form</h1>
 
