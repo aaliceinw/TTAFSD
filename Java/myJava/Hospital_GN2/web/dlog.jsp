@@ -9,7 +9,7 @@
     <body>
      <center>
         <div class="form">
-        <form action="DlogServlet" method="post">
+        <form action="dlogin" method="post">
 
             <h1> Doctor Login Form</h1>
 
@@ -26,21 +26,14 @@
 
 
                 <tr>
-                    <td><input id="s1" type="submit" value="Submit" /></td>
+                    <td><input id="s1" type="submit" value="Login" /></td>
 
                     <td><input id="s1" type="reset" value="Clear" /></td>
                 </tr>
-
-
-
         </table>
-
-
-
-
-
 </form>
   </div>  
-    </center>
+         
+  </center>
     </body>
 </html>

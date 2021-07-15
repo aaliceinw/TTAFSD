@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author joanlaine
  */
-@WebServlet(urlPatterns ={"/DlogServlet"})
+
 public class DlogServlet extends HttpServlet {
 
     String docid, password;

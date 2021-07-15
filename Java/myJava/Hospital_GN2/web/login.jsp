@@ -45,7 +45,7 @@
 
   </div>
 
-        <form name="registrationForm" onsubmit="return validateForm()" action="login" method="post">
+        <form name="loginForm" action="login" method="post">
 
     <h1>Login Form</h1>
 
@@ -63,7 +63,7 @@
 
             <br/><br/>
 
-             <input id="s1" type="submit" value="Submit">
+             <input id="s1" type="submit" value="Login">
 
          <input id="s1" type="reset" value="Clear">
 

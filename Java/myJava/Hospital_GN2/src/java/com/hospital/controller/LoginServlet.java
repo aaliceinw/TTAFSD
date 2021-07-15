@@ -28,8 +28,8 @@ if(user.equals("doctor")){
 request.getRequestDispatcher("dlog.jsp").forward(request, response);    
 }   
 else{
-  //patient regisration page
-request.getRequestDispatcher("dreg.jsp").forward(request, response);
+  //patient patientlog page
+request.getRequestDispatcher("plog.jsp").forward(request, response);
 }    
 
             
