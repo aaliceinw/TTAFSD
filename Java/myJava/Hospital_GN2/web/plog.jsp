@@ -9,14 +9,14 @@
     <body>
        <center>
         <div class="form">
-        <form action="" method="post">
+        <form action="plog" method="post">
 
-            <h1> Patient Login Form<h1>
+            <h1> Patient Login Form</h1>
 
             <table border="1">
 
                 <tr>
-                    <td>Phone Number:<input type="text" name="pphone" value="" />
+                    <td>Phone Number:<input type="text" name="phone" value="" />
 
                 </tr>
                 <tr>
@@ -26,7 +26,7 @@
 
 
                 <tr>
-                    <td><input id="s1" type="submit" value="Submit" /></td>
+                    <td><input id="s1" type="submit" value="Login" /></td>
 
                     <td><input id="s1" type="reset" value="Clear" /></td>
                 </tr>

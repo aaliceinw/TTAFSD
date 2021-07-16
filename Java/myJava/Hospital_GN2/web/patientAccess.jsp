@@ -38,7 +38,7 @@
         <div class="form">
         <form action="" method="post">
 
-            <h1> Patient Access Form<h1>
+            <h1> Patient Access Form</h1>
 
             <table border="1">
 

@@ -10,9 +10,9 @@
     <body>
        <center>
         <div class="form">
-        <form action="" method="post">
+        <form action="preg" method="post">
 
-            <h1> Patient Registration Form<h1>
+            <h1> Patient Registration Form</h1>
 
             <table border="1">
 
@@ -22,17 +22,17 @@
                 </tr>
                 <tr>
                     <td>Address: <input type="text" name="address" value="" /></td>
-                    <td>Postcode: <input type="text" name="pcode" value="" /></td>
+                    <td>Phone <input type="text" name="phone" value="" /></td>
                 </tr>
                 <tr>
 
             <td>Password: <input type="password" name="password" value="" /></td>
-                    <td>Confirm Password: <input type="text" name="cpassword" value="" /></td>
+                    <td>Confirm Password: <input type="password" name="cpassword" value="" /></td>
                 </tr>
 
                 <br/>
                 <tr>
-                    <td><input id="s1" type="submit" value="Submit" /></td>
+                    <td><input id="s1" type="submit" value="Register" /></td>
 
                     <td><input id="s1" type="reset" value="Clear" /></td>
                 </tr>
