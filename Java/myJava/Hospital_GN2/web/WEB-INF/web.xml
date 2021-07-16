@@ -12,6 +12,10 @@
         <servlet-name>dregServlet</servlet-name>
         <servlet-class>com.hospital.controller.DregServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DlogServlet</servlet-name>
+        <servlet-class>com.hospital.controller.DlogServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>dregServlet</servlet-name>
         <url-pattern>/dreg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DlogServlet</servlet-name>
+        <url-pattern>/dlogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

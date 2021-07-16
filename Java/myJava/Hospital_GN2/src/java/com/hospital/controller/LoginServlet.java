@@ -1,77 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package com.hospital.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashSet;
-import java.util.Set;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;//create and manage user's state
 
-/**
- *
- * @author joanlaine
- */
-@WebServlet(urlPatterns = {"/LoginServlet"})
+
+
 public class LoginServlet extends HttpServlet {
-  String duser, puser,;
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
+    String user, doctor, patient;
+   
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
             /* TODO output your page here. You may use following sample code. */
-            //check valid usrcode
-          //uname == upass
           
-          //check valid user code
-            uname = request.getParameter("uname");
-            upass = request.getParameter("upass");
+String user = request.getParameter("user");
+
+if(user.equals("doctor")){
+    //doctor registration page
+request.getRequestDispatcher("dlog.jsp").forward(request, response);    
+}   
+else{
+  //patient patientlog page
+request.getRequestDispatcher("plog.jsp").forward(request, response);
+}    
+
             
-            if(uname.equals(upass))
-            {
-                //login ok
-                                
-                // Manage user session-> HttpSession
-                HttpSession se = request.getSession();//create new session
-                se.setAttribute("myuser", uname);
                 
-                //out.print("Welcome "+uname);
-                // goto profile page
-                request.getRequestDispatcher("profile.jsp").forward(request, response);
-                
-            }
-            else
-            {
-                //login not ok
-                out.print("Opps..sorry.");
-                
-                //request Dispatcher
-                //forward-> forward page content
-                //include-> include page content
-                request.getRequestDispatcher("login.jsp").include(request, response);
-                
-            }
            
-        }
-        
-        finally {
+            }
+         catch(Exception ex) {
             out.close();
         }
     }

@@ -24,7 +24,7 @@ public class DoctorQuery {
         int row_insert = 0;
         try
         {
-            String qry = "insert into Doctor(docid,docName,phone, address,degree,subject,password) values(?,?,?,?,?,?,?)";
+            String qry = "insert into doctor(docid,docName,phone,address,degree,subject,password) values(?,?,?,?,?,?,?)";
             PreparedStatement stmt = con.prepareStatement(qry);//query getting pre-compile
             //setting column values in student table
             stmt.setInt(1, d.getDocid());
@@ -43,6 +43,9 @@ public class DoctorQuery {
         return row_insert;
     }//insert ends
 
+    //2.Validate existing user
+   
+    
 ////2. update -> int
 //    public static int update(int sid , int up_score)
 //    {
