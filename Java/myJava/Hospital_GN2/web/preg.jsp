@@ -59,7 +59,7 @@
                 <div class=form-inner>
    
                     <label for="bdate">Birth Date <span>*</span></label>
-                    <input id="bdate" type="date" name="bdate" />
+                    <input id="bdate" type="date" name="dob" />
                     <i class="fas fa-calendar-alt"></i>
                     </div>
                 Password: <input type="password" name="password" placeholder="Enter Password">

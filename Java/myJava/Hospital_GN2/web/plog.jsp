@@ -52,7 +52,7 @@
             Phone Number: <input type="text" name="phone" value="" placeholder="Login with phone number">
             Password: <input type="password" name="password" value ="" placeholder="Enter Password">
             
-            <button type="submit" value="Login">Login</button>
+            <button type="submit" value="Submit">Submit</button>
           </div>
       </fieldset>
     </form>

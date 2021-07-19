@@ -50,7 +50,7 @@
             Doctor ID: <input type="text" name="docid" value="" placeholder="Login with Doctor ID">
             Password: <input type="password" name="password" value="" placeholder="Enter Password">
             
-            <button type="submit" value="Login">Login</button>
+            <button type="submit" value="Submit">Submit</button>
           </div>
       </fieldset>
     </form>
