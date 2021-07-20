@@ -19,6 +19,7 @@ public class PregServlet extends HttpServlet {
     String address;
     String dob;
     String password;
+    String problem;
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -34,10 +35,11 @@ public class PregServlet extends HttpServlet {
          dob= request.getParameter("dob");
          password = request.getParameter("password");
         String cpass = request.getParameter("cpassword");
+        problem =request.getParameter("problem");
          
         if(password.equals(cpass)){
         //create Patient object
-          Patient p= new Patient(phone,name,address,dob,password);
+          Patient p= new Patient(phone,name,address,dob,password,problem);
         //create Doctor record in DB
        int r = PatientQuery.insert(p);
        

@@ -8,44 +8,36 @@ package com.hospital.model;
 /**
  *
  * @author joanlaine
- */
+ */   
 public class Record {
-    int pid;
+    
     String name;
     String phone;
     String dob;
     String problem;
     String docname;
-    int docid;
+    String medecine;
     String test;
-    String treat;
+   int treat;
 
-    //create default constructor
-    public Record() {
+//create default constructor
+     public Record() {
     }
 
     //create parameterized constructor
-    public Record(int pid, String name, String phone, String dob, String problem, String docname, int docid, String test, String treat) {
-        this.pid = pid;
+
+    public Record(String name, String phone, String dob, String problem, String docname, String medecine, String test, int treat) {
         this.name = name;
         this.phone = phone;
         this.dob = dob;
         this.problem = problem;
         this.docname = docname;
-        this.docid = docid;
+        this.medecine = medecine;
         this.test = test;
         this.treat = treat;
     }
-    
+   
     //create getter setter
-
-    public int getPid() {
-        return pid;
-    }
-
-    public void setPid(int pid) {
-        this.pid = pid;
-    }
 
     public String getName() {
         return name;
@@ -87,12 +79,12 @@ public class Record {
         this.docname = docname;
     }
 
-    public int getDocid() {
-        return docid;
+    public String getMedecine() {
+        return medecine;
     }
 
-    public void setDocid(int docid) {
-        this.docid = docid;
+    public void setMedecine(String medecine) {
+        this.medecine = medecine;
     }
 
     public String getTest() {
@@ -103,14 +95,12 @@ public class Record {
         this.test = test;
     }
 
-    public String getTreat() {
+    public int getTreat() {
         return treat;
     }
 
-    public void setTreat(String treat) {
+    public void setTreat(int treat) {
         this.treat = treat;
     }
-    
-    
-    
-}
+
+}       

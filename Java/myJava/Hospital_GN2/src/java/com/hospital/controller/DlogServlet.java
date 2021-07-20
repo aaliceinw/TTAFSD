@@ -46,13 +46,13 @@ public class DlogServlet extends HttpServlet {
         docid = request.getParameter("docid");
         password = request.getParameter("password");
         
-//            Connection con = MyConnection.connect(); 
+         Connection con = MyConnection.connect(); 
             
             //4. Write Sql
             Statement stmt = con.createStatement();
             
              
-            String qry1 = "select * from patient where doctor='"+docid+"' and password='"+password+"'";
+            String qry1 = "select * from doctor where docid='"+docid+"' and password='"+password+"'";
             ResultSet rs1 = stmt.executeQuery(qry1);
             if(rs1.next())
             {
@@ -73,6 +73,7 @@ public class DlogServlet extends HttpServlet {
         } // try ends
         catch(Exception ex) {
             out.close();
+            System.out.println(ex);
         }
     }
 
