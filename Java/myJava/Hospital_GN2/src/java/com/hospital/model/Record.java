@@ -11,14 +11,15 @@ package com.hospital.model;
  */   
 public class Record {
     
+    int treat;
     String name;
-    String phone;
+    int phone;
     String dob;
     String problem;
-    String docname;
+    String docName;
     String medecine;
     String test;
-   int treat;
+   
 
 //create default constructor
      public Record() {
@@ -26,18 +27,26 @@ public class Record {
 
     //create parameterized constructor
 
-    public Record(String name, String phone, String dob, String problem, String docname, String medecine, String test, int treat) {
+    public Record(int treat, String name, int phone, String dob, String problem, String docName, String medecine, String test) {
+        this.treat = treat;
         this.name = name;
         this.phone = phone;
         this.dob = dob;
         this.problem = problem;
-        this.docname = docname;
+        this.docName = docName;
         this.medecine = medecine;
         this.test = test;
+    }
+
+    //create getter setter
+
+    public int getTreat() {
+        return treat;
+    }
+
+    public void setTreat(int treat) {
         this.treat = treat;
     }
-   
-    //create getter setter
 
     public String getName() {
         return name;
@@ -47,11 +56,11 @@ public class Record {
         this.name = name;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
@@ -71,12 +80,12 @@ public class Record {
         this.problem = problem;
     }
 
-    public String getDocname() {
-        return docname;
+    public String getDocName() {
+        return docName;
     }
 
-    public void setDocname(String docname) {
-        this.docname = docname;
+    public void setDocName(String docName) {
+        this.docName = docName;
     }
 
     public String getMedecine() {
@@ -95,12 +104,5 @@ public class Record {
         this.test = test;
     }
 
-    public int getTreat() {
-        return treat;
-    }
 
-    public void setTreat(int treat) {
-        this.treat = treat;
-    }
-
-}       
+}

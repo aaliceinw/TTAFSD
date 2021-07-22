@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="logform.css">
+    <script src="logform.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Change Makers Essentials</h1>
+        <div class="nav-right">
+          <a href="logform.html" src="logForm" url="login">Login</a>
+          <a href="regform.html" src="registrationForm" url="register">Register</a>
+          <a href="HTL3_4.html" src="HTL3_4" url="home">Home</a>
+        </div>
+    </div>
+
+<form name="loginForm" onsubmit="return validateForm()" action="confirmation.php" method="post">
+    <h2>Login Form</h2>
+    <div class="row">
+        <label>User Name<label>
+        <input type="text" name="uname" placeholder="User Name">
+        <div class="error" id="unameErr"></div>
+    </div>
+    <div class="row">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="Email Address">
+        <div class="error" id="emailErr"></div>
+    </div>
+    <div class="row">
+        <label>Password</label>
+        <input type="password" name="pw1" placeholder="Password">
+        <div class="error" id="pw1Err"></div>
+    </div>
+    <div class="row">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+</body>
+</html>

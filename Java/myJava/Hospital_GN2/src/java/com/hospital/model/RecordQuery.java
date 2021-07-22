@@ -14,15 +14,19 @@ public class RecordQuery {
         try
         {
             //qry1 insert patient booking details into record db
-            String qry1 = "insert into record(name,phone,address,dob,password) values(?,?,?,?,?)";
+            String qry1 = "insert into record(treat,name,phone,dob,problem,docName,medecine,test) values(?,?,?,?,?,?,?,?)";
             PreparedStatement stmt = con.prepareStatement(qry1);//query getting pre-compile
             //setting column values in student table
             
-            stmt.setString(1,r.getName());
-            //stmt.setInt(2,r.getPhone());
-            //stmt.setString(3,r.getAddress());
+            stmt.setInt(1,r.getTreat());
+            stmt.setString(2,r.getName());
+            stmt.setInt(3,r.getPhone());
             stmt.setString(4, r.getDob());
-            //stmt.setString(5, r.getPassword());
+            stmt.setString(5, r.getProblem());
+            stmt.setString(6, r.getDocName());
+            stmt.setString(7, r.getMedecine());
+            stmt.setString(8, r.getTest());
+            
             row_insert = stmt.executeUpdate();
         }//try ends
         catch(Exception ex)
