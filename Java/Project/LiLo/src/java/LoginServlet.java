@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,9 +11,9 @@ import javax.servlet.http.HttpSession;
  *
  * @author joanlaine
  */
-@WebServlet(urlPatterns = {"/Login"})
-public class HTL5LoginServlet extends HttpServlet {
-   String upass, uname;
+@WebServlet(urlPatterns = {"/login"})
+public class LoginServlet extends HttpServlet {
+  String uname, upass ;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,6 +27,8 @@ public class HTL5LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+
+            
         try {
             /* TODO output your page here. You may use following sample code. */
             
@@ -60,17 +56,9 @@ public class HTL5LoginServlet extends HttpServlet {
                 out.print("Sorry.. cannot login");
                 out.print("<br/>");
                 out.print("Check user name or password");
-                
-                //request Dispatcher
-                //forward-> forward page content
-                //include-> include page content
-                request.getRequestDispatcher("profile.jsp").include(request, response);
-                
-            }
-           
+            } 
         }
-        
-        finally {
+            finally {
             out.close();
         }
     }
@@ -115,3 +103,4 @@ public class HTL5LoginServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+

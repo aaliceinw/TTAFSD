@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="HTL7" default="default" basedir=".">
-    <description>Builds, tests, and runs the project HTL7.</description>
+<project name="LiLo" default="default" basedir=".">
+    <description>Builds, tests, and runs the project LiLo.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 

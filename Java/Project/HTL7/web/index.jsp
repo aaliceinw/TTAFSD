@@ -16,8 +16,8 @@
 <center>
 <h1>HTL7 - Login and Logout - Welcome</h1> 
 <a href="index.jsp">Home</a>   
-<a href="HTL5Login.jsp">Login</a>  
-<a href="HTL5Display.jsp">Logout</a>  
+<a href="HTL7Login.jsp">Login</a>  
+<a href="profile.jsp">Logout</a>  
   
 </center>
 </body>  
