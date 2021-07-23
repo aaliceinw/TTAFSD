@@ -1,18 +1,40 @@
-<%-- 
-    Document   : bookings
-    Created on : 8 Jul 2021, 11:26:51
-    Author     : joanlaine
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="com.hospital.model.MyConnection"%>
 <!DOCTYPE html>
+
 <html>
-        <head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>bookings</title>
-        <link rel="stylesheet" type="text/css" href="formstyle.css" media="screen" />
+        <title>patient</title>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+                <link rel="stylesheet" type="text/css" href="formstyle.css" media="screen" />
     </head>
     <body>
+        <div id="main_container">
+            <div class="header">
+                <div id="logo"><a href="#"><img src="images/logo.png" alt="" width="162" height="54" border="0" /></a></div>
+                <div class="right_header">
+                    <div class="top_menu"> <a href="login.jsp" class="login">login</a><a href="logout" class="sign_up">Logout</a> </div>
+                    <div id="menu">
+
+                        <ul>
+                            <li><a class="current" href="index.jsp">Home</a></li>
+                            <li><a href="bookings.jsp" target="f1">Bookings</a></li>
+                            <!-- <li><a href="treatment.jsp">Treatments</a></li> -->
+                            <li><a href="displayRecords.jsp">Treatments</a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="middle_box">
+                <div class="middle_box_content"><img src="images/banner_content.jpg" alt="" /></div>
+
+            </div>
+    
          <div class="form">
         <form action="preg" method="post">
        <fieldset>
@@ -20,29 +42,41 @@
           <h3>Patient Bookings</h3>
           
         </legend>
+<%
+      int phone = Integer.parseInt(request.getAttribute("phone").toString());
+      Connection con = MyConnection.connect();
+                Statement stmt = con.createStatement();
+                //int insertRecord = stmt.executeUpdate("insert into record(phone, dob, problem, docName,bookingDate) values("+phone+",'"+dob+"','"+problem+"','"+docName+"','"+bookingDate+"')");
+        String dob,problem,docName,bookingDate,pname;       
 
-        <div class="form-inner">
-            <h1>Appointment Details</h1>
-            Patient Name: <input type="text" name="name" value="">
-            Phone Number: <input type="text" name="phone" value="">
-            Date of Birth<input type="text" name="dob" value="">
-            Problem: <textarea placeholder="Problem..." rows="5" name="problem"></textarea>
-    
-            <div>
-                <label>Select Doctor*</label>  
-                <select>
-                  <option value=""></option>
-                  <option value=""></option>
-                  <option value=""></option>
-                  <option value=""></option>
-                  <option value=""></option>
-                  <option value=""></option>
-                 <option value=""></option>
-                </select>
-              </div>
+                ResultSet rs = stmt.executeQuery("select * from record where phone="+phone);
+                %>
+                <table border="1">
+                <%
+                if(rs.next())
+                {
+                    pname=rs.getString("name");
+                    phone = rs.getInt("phone");
+                   dob = rs.getString("dob");
+                   problem= rs.getString("problem");
+                   docName=rs.getString("docName");
+                   bookingDate=rs.getString("bookingDate");
+                   
+  %>
+                    <tr>
+                        <td><%= pname%></td>
+                        <td><%= phone%></td>
+                        <td><%= dob%></td>
+                        <td><%= problem%></td>
+                        <td><%= docName%></td>
+                        <td><%= bookingDate%></td>
+                   </tr>
+<%
+                           }
+                
+      %>
+                </table>
 
-            
-            <button type="submit" href="/">Submit</button>
           </div>
        </fieldset>
         </form>

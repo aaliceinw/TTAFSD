@@ -10,36 +10,34 @@ package com.hospital.model;
  * @author joanlaine
  */   
 public class Record {
-    
-    int treat;
+      int treat;
     String name;
-    int phone;
-    String dob;
-    String problem;
-    String docName;
-    String medecine;
-    String test;
-   
+   int phone;
+   String dob;
+   String problem;
+   String docName;
+   String medicine;
+   String test;
+   String bookingDate;
 
-//create default constructor
-     public Record() {
+    //create default constructor
+
+    public Record() {
     }
-
-    //create parameterized constructor
-
-    public Record(int treat, String name, int phone, String dob, String problem, String docName, String medecine, String test) {
+    //create parameterized constructor 
+    public Record(int treat, String name, int phone, String dob, String problem, String docName, String medicine, String test, String bookingDate) {
         this.treat = treat;
         this.name = name;
         this.phone = phone;
         this.dob = dob;
         this.problem = problem;
         this.docName = docName;
-        this.medecine = medecine;
+        this.medicine = medicine;
         this.test = test;
+        this.bookingDate = bookingDate;
     }
-
+    
     //create getter setter
-
     public int getTreat() {
         return treat;
     }
@@ -88,12 +86,12 @@ public class Record {
         this.docName = docName;
     }
 
-    public String getMedecine() {
-        return medecine;
+    public String getMedicine() {
+        return medicine;
     }
 
-    public void setMedecine(String medecine) {
-        this.medecine = medecine;
+    public void setMedicine(String medicine) {
+        this.medicine = medicine;
     }
 
     public String getTest() {
@@ -104,5 +102,14 @@ public class Record {
         this.test = test;
     }
 
+    public String getBookingDate() {
+        return bookingDate;
+    }
+
+    public void setBookingDate(String bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
+  
 
 }

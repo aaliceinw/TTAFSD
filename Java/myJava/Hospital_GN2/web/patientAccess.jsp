@@ -1,4 +1,8 @@
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="com.hospital.model.MyConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
  
@@ -13,18 +17,16 @@
   <div class="header">
     <div id="logo"><a href="#"><img src="images/logo.png" alt="" width="162" height="54" border="0" /></a></div>
     <div class="right_header">
-        <div class="top_menu"> <a href="login.jsp" class="login">login</a><a href="logout" class="sign_up">Logout</a> </div>
-      <div id="menu">
-        
+        <div class="top_menu"> <a href="login.jsp" class="login">login</a>  <a href="logout" class="sign_up">Logout</a> </div>
+     <!-- <div id="menu">
         <ul>
           <li><a class="current" href="index.jsp">Home</a></li>
           <li><a href="bookings.jsp" target="f1">Bookings</a></li>
-         <!-- <li><a href="treatment.jsp">Treatments</a></li> -->
-          <li><a href="displayRecords.jsp">Treatments</a></li>
-
-
-        </ul>
-      </div>
+         <!-- <li><a href="treatment.jsp">Treatments</a></li> 
+          <li><a href="displayRecords.jsp">Treatments</a></li>  
+    </ul> 
+       
+      </div>-->
     </div>
   </div>
   <div id="middle_box">
@@ -36,31 +38,55 @@
 <iframe name="f1" height="600px" width="74%" ></iframe>
 </div>  -->
          <center>
+             <%
+             String pname = request.getAttribute("pname").toString();
+             request.setAttribute("pname",pname);
+             
+             %>
         <div class="form">
-        <form action="" method="post">
+        <form action="booking" method="post">
 
             <h1> Patient Access Form</h1>
 
             <table border="1">
-
+                <tr>
+                    <td>Patient Name:</td>
+                    <td><input type="text" name="pname" value="<%= pname%>"/></td>
+                </tr>
                 <tr>
                     <td>Phone Number:<input type="text" name="phone" value="" /> </td>
-                    <td>Date of Birth: <input type="text" name="dob" value="" /></td>
+                    <td>Date of Birth: <input type="date" name="dob" value="" /></td>
                 </tr>
                 <tr>
                     <td>Problem:<textarea name="problem" rows="4" cols="20">
                         </textarea> </td>
-                        <td>Select Doctor:<select name="docid" value ="">
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
+<!--                        <td>Select Doctor:<select name="docid" value ="">
+                                
                             </select> </td>
+                </tr->
+                      -->
+                     <%
+       Connection con = MyConnection.connect();
+       Statement stmt = con.createStatement();
+       ResultSet rs1 = stmt.executeQuery("select * from doctor");
+       %>
+       <td><select name="docName">
+             <%
+       while(rs1.next())
+       {
+           %>
+                        
+           <option value=<%= rs1.getString("docName")%>><%=rs1.getString("docName")%>
+           </option>                            
+                   <%
+                   }
+                   %>
+           </select>
+                   </td>
                 </tr>
                 <tr>
 
-            <td>Booking Date: <input type="date" name="" value="" /></td>
+            <td>Booking Date: <input type="date" name="bdate" value="" /></td>
 
                 </tr>
 

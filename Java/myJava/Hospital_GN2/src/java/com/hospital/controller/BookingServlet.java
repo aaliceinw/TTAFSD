@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.hospital.controller;
 
 import com.hospital.model.MyConnection;
@@ -11,50 +15,41 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-public class PlogServlet extends HttpServlet {
+/**
+ *
+ * @author GEORGE JNR
+ */
+public class BookingServlet extends HttpServlet {
 
-    String phone, password;
+   int phone;
+   String dob;
+   String problem;
+   String docName;
+   String bookingDate;
+   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here. You may use following sample code. */
-            
-            //get request parameters
-        phone = request.getParameter("phone");
-        password = request.getParameter("password");
-        
-           Connection con = MyConnection.connect(); 
-            
-            //4. Write Sql
-            Statement stmt = con.createStatement();
-            
-             
-            String qry1 = "select * from patient where phone='"+phone+"' and password='"+password+"'";
-            ResultSet rs1 = stmt.executeQuery(qry1);
-            if(rs1.next())
-            {
-                String pname = rs1.getString(2);
-              out.print("Hi "+pname+ "Welcome, to  Medical Clinic Management System.");
-              
-              //HttpSession se = request.getSession();
-              request.setAttribute("pname" , pname);
-              
-              request.getRequestDispatcher("patientAccess.jsp").forward(request, response);
-          }
-          else{
-              out.print("Oops.. your username or password is incorrect.");
-              
-              request.getRequestDispatcher("plog.jsp").include(request, response);
-          }
-            
-            
-        } // try ends
+            phone = Integer.parseInt(request.getParameter("phone"));
+            String pname = request.getParameter("pname");
+            dob = request.getParameter("dob");
+            problem = request.getParameter("problem");
+            docName = request.getParameter("docName");
+            bookingDate = request.getParameter("bdate");
+         
+         {
+                Connection con = MyConnection.connect();
+                Statement stmt = con.createStatement();
+                int insertRecord = stmt.executeUpdate("insert into record(name, phone, dob, problem, docName,bookingDate) values('"+pname+"',"+phone+",'"+dob+"','"+problem+"','"+docName+"','"+bookingDate+"')");
+                request.setAttribute("phone", phone);
+                request.getRequestDispatcher("bookings.jsp").forward(request, response);
+            }
+        } 
         catch(Exception ex) {
-            out.close();
+               System.out.println("Booking error :"+ex);
         }
     }
 

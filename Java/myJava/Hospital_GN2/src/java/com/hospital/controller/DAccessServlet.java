@@ -13,49 +13,51 @@ import javax.servlet.http.HttpServletResponse;
 
 public class DAccessServlet extends HttpServlet {
   
-    String patient;
-     int phone;
+            int treat;
             String name;
+            int phone;
             String dob;
             String problem;
-    protected void getRequest(HttpServletRequest request, HttpServletResponse response)
+            String docName;
+            String medicine;
+            String test;
+            String bookingDate;
+            
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
- /* TODO output your page here. You may use following sample code. */   
-
         try {
-           
-           //get request parameters 
-          patient = request.getParameter("patient"); 
-          System.out.println(patient);
-            
-          //connect to database
-            
+          String record = request.getParameter("record");
+            System.out.println(record);
+
+            {
                 Connection con = MyConnection.connect();
-           //write sql      
                 Statement stmt = con.createStatement();
-           //get results     
-                ResultSet rs = stmt.executeQuery("select * from patient where phone='"+phone+"', name='"+name+"', dob='"+dob+"' and problem='"+problem+"'");
+                ResultSet rs = stmt.executeQuery("select * from record where treat='"+treat+"',name='"+name+"', phone='"+phone+"', dob='"+dob+"', problem='"+problem+"',docName='"+docName+"', medicine='"+medicine+"', test='"+test+"'  and bookingDate='"+bookingDate+"'");
                 if(rs.next())
                 {
-                   phone = rs.getInt("phone");
+                   phone = rs.getInt("treat");
                    name = rs.getString("name");
+                    phone = rs.getInt("phone");
                    dob= rs.getString("dob");
                    problem=rs.getString("problem");
-                }//if ends
+                   docName=rs.getString("docName");
+                   medicine=rs.getString("medicine");
+                   test=rs.getString("test");
+                   bookingDate=rs.getString("bookingDate");
+                }
                 
-                int insertPatient = stmt.executeUpdate("insert into record(phone, name, dob, problem) values('"+patient+"',"+phone+","+name+","+dob+", "+problem+")");
-
-                request.getRequestDispatcher("doctorAccess.jsp").forward(request, response);
-                System.out.println("<h1>Oops! Something went wrong. Cannot save entry.</h1>");
-                
-        } //try ends
-        catch(Exception ex) 
-        {
+                int insertRecord = stmt.executeUpdate("insert into record(treat, name,phone, dob, problem, docName, medicine, test, bookingDate) values('"+record+"',"+treat+","+name+","+phone+","+dob+","+problem+","+docName+", "+medicine+" "+test+","+bookingDate+")");
+               
+                request.getRequestDispatcher("bookings.jsp").forward(request, response);
+            }
+        } 
+        catch(Exception ex) {
                System.out.println("Booking error :"+ex);
-        }//catch ends
-    
+        }
+    }  
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -96,20 +98,5 @@ public class DAccessServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }
-
-    
-
-
-
-
-
-
-
-
-
-

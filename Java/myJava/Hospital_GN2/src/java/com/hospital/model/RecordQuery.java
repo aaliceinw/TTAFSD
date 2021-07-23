@@ -14,7 +14,7 @@ public class RecordQuery {
         try
         {
             //qry1 insert patient booking details into record db
-            String qry1 = "insert into record(treat,name,phone,dob,problem,docName,medecine,test) values(?,?,?,?,?,?,?,?)";
+            String qry1 = "insert into record(treat,name,phone,dob,problem,docName,medecine,test,bookingDate) values(?,?,?,?,?,?,?,?,?)";
             PreparedStatement stmt = con.prepareStatement(qry1);//query getting pre-compile
             //setting column values in student table
             
@@ -24,9 +24,9 @@ public class RecordQuery {
             stmt.setString(4, r.getDob());
             stmt.setString(5, r.getProblem());
             stmt.setString(6, r.getDocName());
-            stmt.setString(7, r.getMedecine());
+            stmt.setString(7, r.getMedicine());
             stmt.setString(8, r.getTest());
-            
+            stmt.setString(9, r.getBookingDate());
             row_insert = stmt.executeUpdate();
         }//try ends
         catch(Exception ex)
