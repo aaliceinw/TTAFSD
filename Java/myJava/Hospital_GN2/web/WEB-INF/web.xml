@@ -24,10 +24,6 @@
         <servlet-name>PlogServlet</servlet-name>
         <servlet-class>com.hospital.controller.PlogServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>DAccessServlet</servlet-name>
-        <servlet-class>com.hospital.controller.DAccessServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
@@ -51,10 +47,6 @@
     <servlet-mapping>
         <servlet-name>PlogServlet</servlet-name>
         <url-pattern>/plog</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DAccessServlet</servlet-name>
-        <url-pattern>/treat</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

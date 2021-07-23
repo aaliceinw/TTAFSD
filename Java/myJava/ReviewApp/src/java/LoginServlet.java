@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
             else
             {
                 //login not ok
-                out.print("Opps..sorry.");
+                out.print("<h1>Opps..sorry.Check your username or password.</h1>");
                 
                 //request Dispatcher
                 //forward-> forward page content

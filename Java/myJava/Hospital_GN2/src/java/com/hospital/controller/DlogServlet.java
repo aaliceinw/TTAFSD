@@ -64,8 +64,8 @@ public class DlogServlet extends HttpServlet {
               request.getRequestDispatcher("doctorAccess.jsp").forward(request, response);
           }
           else{
-              out.print("Oops.. your username or password is incorrect.");
-              
+              out.print("<h1>Oops.. your username or password is incorrect.</h1>");
+
               request.getRequestDispatcher("dlog.jsp").include(request, response);
           }
             

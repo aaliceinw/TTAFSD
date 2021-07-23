@@ -35,7 +35,7 @@
     <center>
 
         
-        <h1>Patient Records</h1>
+       
         
         
         
@@ -49,7 +49,7 @@
         ResultSet rs = stmt.executeQuery(qry);//execute query
         %>
         <!Database code to display all records in a table from ResultSet in browser>
-        <table  border="1" padding="10">
+        <table   border="4" padding="10"><br/><center><h2> Patient Records</h2></center> <br/><br/>
         <%    
                 //get one by one record from ResultSet
                 while(rs.next())

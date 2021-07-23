@@ -45,9 +45,8 @@ public class PlogServlet extends HttpServlet {
               request.getRequestDispatcher("patientAccess.jsp").forward(request, response);
           }
           else{
-              out.print("Oops.. your username or password is incorrect.");
-              
-              request.getRequestDispatcher("plog.jsp").include(request, response);
+                 request.getRequestDispatcher("plog.jsp").include(request, response);
+                out.print("Oops.. your username or password is incorrect.");
           }
             
             

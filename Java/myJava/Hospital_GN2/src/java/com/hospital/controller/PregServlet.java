@@ -45,23 +45,28 @@ public class PregServlet extends HttpServlet {
        
        if(r==1)
        {
-           out.print("You have successfully registered");
-           request.getRequestDispatcher("plog.jsp").include(request,response);
-       }
+           out.print("<h1>You have successfully registered</h1>");
+           request.getRequestDispatcher("patientAccess.jsp").include(request,response);
+        }
        else{
-           out.print("Registration unsuccessful. All fields must be completed.");
+           out.print("<h1>Patient already exists. Please register new patient details.</h1>");
            request.getRequestDispatcher("preg.jsp").include(request, response);
 
     }}//else ends
         else{
-           out.print("Password did not match");
+           out.print("<h1>Oops!..Password don't match</h1>");
            request.getRequestDispatcher("preg.jsp").include(request, response);  
         }
         
     }//try ends
-         catch(Exception ex){
-            System.out.println("Servlet Error :"+ex);
-        }//catch ends
+         catch(IOException ex){
+            System.out.println("Oops!..something went wrong"+ex);
+        } catch (NumberFormatException ex) {
+            System.out.println("<h1><h1>Oops!..enter numbers only.</h1></h1>"+ex);
+         } //catch ends
+         catch (ServletException ex) {
+             System.out.println("<h1>Oops!..something went wrong</h1>"+ex);
+         }//catch ends
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -46,9 +46,10 @@ public class DAccessServlet extends HttpServlet {
                 }//if ends
                 
                 int insertPatient = stmt.executeUpdate("insert into record(phone, name, dob, problem) values('"+patient+"',"+phone+","+name+","+dob+", "+problem+")");
-               
+
                 request.getRequestDispatcher("doctorAccess.jsp").forward(request, response);
-            
+                System.out.println("<h1>Oops! Something went wrong. Cannot save entry.</h1>");
+                
         } //try ends
         catch(Exception ex) 
         {
