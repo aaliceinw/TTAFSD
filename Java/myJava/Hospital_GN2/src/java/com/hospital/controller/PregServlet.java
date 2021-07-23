@@ -46,7 +46,7 @@ public class PregServlet extends HttpServlet {
        if(r==1)
        {
            out.print("<h1>You have successfully registered</h1>");
-           request.getRequestDispatcher("patientAccess.jsp").include(request,response);
+           request.getRequestDispatcher("plog.jsp").include(request,response);
         }
        else{
            out.print("<h1>Patient already exists. Please register new patient details.</h1>");
