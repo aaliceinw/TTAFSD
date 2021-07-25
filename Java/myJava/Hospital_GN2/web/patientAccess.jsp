@@ -33,10 +33,7 @@
     <div class="middle_box_content"><img src="images/banner_content.jpg" alt="" /></div>
 
     </div>
-<!--
-        <div class="iframe" align="right">
-<iframe name="f1" height="600px" width="74%" ></iframe>
-</div>  -->
+
          <center>
              <%
              String pname = request.getAttribute("pname").toString();
@@ -60,11 +57,7 @@
                 <tr>
                     <td>Problem:<textarea name="problem" rows="4" cols="20">
                         </textarea> </td>
-<!--                        <td>Select Doctor:<select name="docid" value ="">
-                                
-                            </select> </td>
-                </tr->
-                      -->
+
                      <%
        Connection con = MyConnection.connect();
        Statement stmt = con.createStatement();
@@ -85,20 +78,14 @@
                    </td>
                 </tr>
                 <tr>
-
             <td>Booking Date: <input type="date" name="bdate" value="" /></td>
-
                 </tr>
-
                 <br/>
                 <tr>
                     <td><input id="s1" type="submit" value="Book" /></td>
 
                     <td><input id="s1" type="reset" value="Clear" /></td>
                 </tr>
-
-
-
         </table>
 </form>
   </div>   

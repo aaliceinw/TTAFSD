@@ -36,18 +36,18 @@
             </div>
     
          <div class="form">
-        <form action="preg" method="post">
+             <form action="preg" method="post"></form>
        <fieldset>
         <legend>
-          <h3>Patient Bookings</h3>
+            <center> <h3>Patient Bookings</h3></center>
           
         </legend>
 <%
       int phone = Integer.parseInt(request.getAttribute("phone").toString());
       Connection con = MyConnection.connect();
                 Statement stmt = con.createStatement();
-                //int insertRecord = stmt.executeUpdate("insert into record(phone, dob, problem, docName,bookingDate) values("+phone+",'"+dob+"','"+problem+"','"+docName+"','"+bookingDate+"')");
-        String dob,problem,docName,bookingDate,pname;       
+                //int insertRecord = stmt.executeUpdate("insert into record(name, phone, dob, problem, docName, bookingDate) values('"+name"', '"+phone+"','"+dob+"','"+problem+"','"+docName+"','"+bookingDate+"');
+        String name,dob,problem,docName,bookingDate;       
 
                 ResultSet rs = stmt.executeQuery("select * from record where phone="+phone);
                 %>
@@ -55,7 +55,7 @@
                 <%
                 if(rs.next())
                 {
-                    pname=rs.getString("name");
+                    name=rs.getString("name");
                     phone = rs.getInt("phone");
                    dob = rs.getString("dob");
                    problem= rs.getString("problem");
@@ -64,8 +64,9 @@
                    
   %>
                     <tr>
-                        <td><%= pname%></td>
+                        <td><%= name%></td>
                         <td><%= phone%></td>
+                        <br/>
                         <td><%= dob%></td>
                         <td><%= problem%></td>
                         <td><%= docName%></td>
@@ -79,7 +80,9 @@
 
           </div>
        </fieldset>
-        </form>
+                
+    <div class="copyright"> <img src="images/footer_logo.gif" alt="" /> </div>
+    <div class="center_footer">&copy; Medical Clinic 2008. All Rights Reserved</div>
          </div>
     </body>
 </html>

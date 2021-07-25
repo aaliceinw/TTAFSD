@@ -25,7 +25,7 @@
       h1 {
       margin-top: 20px;
       font-weight: 500;
-      }
+} 
       form {
           padding-top: 10px;
           padding-left: 15px;
@@ -125,4 +125,5 @@
       form {
       width: 100%;
       }
-      }
+      /*-----------------------------table------------------------*/
+      }      
