@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hospital.controller;
-import com.hospital.model.MyConnection;
+package com.ttafsd.controller;
+
+import com.ttafsd.model.Student;
+import com.ttafsd.model.StudentQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,57 +16,50 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author GEORGE JNR
+ * @author joanlaine
  */
-public class DAccessServlet extends HttpServlet {
-  int treat;
-  String name;
-     int phone;
-            String dob;
-            String problem;
-            String docName;
-            String medicine;
-            String test;
-            String bookingDate;
-            
+public class InsertStudent extends HttpServlet {
+int sid;
+String first;
+String last;
+int score;
+    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-          String record = request.getParameter("record");
-            System.out.println(record);
+            /* TODO output your page here. You may use following sample code. */
+            sid =Integer.parseInt(request.getParameter("sid"));
+            first = request.getParameter("firstname");
+            last = request.getParameter("lastname");
+ score =Integer.parseInt(request.getParameter("score"));
+ 
+ 
+      //create Student object
+     Student s = new Student(sid, first,last,score);
+     //create Student record DB
+     int r = StudentQuery.insert(s);   
+     
+     if(r==1)
+     {
+     out.print("Student record created succesfully");
+     request.getRequestDispatcher("display.jsp").include(request,response); 
+     }//if ends
+     
+     else{
+         out.print("Error. Cannot save record");
+         request.getRequestDispatcher("display.jsp").include(request,response); 
+     }//else ends
+     
+  
             
-         
             
-            
-            {
-                Connection con = MyConnection.connect();
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery("select * from record where treat='"+treat+"',name='"+name+"', phone='"+phone+"', dob='"+dob+"', problem='"+problem+"',docName='"+docName+"', medicine='"+medicine+"', test='"+test+"'  and bookingDate='"+bookingDate+"'");
-                if(rs.next())
-                {
-                   treat = rs.getInt("treat");
-                   name = rs.getString("name");
-                    phone = rs.getInt("phone");
-                   dob= rs.getString("dob");
-                   problem=rs.getString("problem");
-                   docName=rs.getString("docName");
-                   medicine=rs.getString("medicine");
-                   test=rs.getString("test");
-                   bookingDate=rs.getString("bookingDate");
-                }
-                
-                int insertRecord = stmt.executeUpdate("insert into record(treat, name,phone, dob, problem, docName, medicine, test, bookingDate) values('"+record+"',"+treat+","+name+","+phone+","+dob+","+problem+","+docName+", "+medicine+" "+test+","+bookingDate+")");
-               
-                request.getRequestDispatcher("bookings.jsp").forward(request, response);
-            }
-        } 
-        catch(Exception ex) {
-               System.out.println("Booking error :"+ex);
+        } finally {
+            out.close();
         }
     }
-
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

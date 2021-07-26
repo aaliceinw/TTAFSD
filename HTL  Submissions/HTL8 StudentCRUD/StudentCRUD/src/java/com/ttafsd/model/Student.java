@@ -1,0 +1,60 @@
+
+package com.ttafsd.model;
+
+
+public class Student {
+    
+    int sid;
+    String firstname;
+    String lastname;
+    int score;
+
+    
+    //default constructor
+    public Student() {
+    }
+    
+    
+    //create parameter constructer
+
+    public Student(int sid, String firstname, String lastname, int score) {
+        this.sid = sid;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.score = score;
+    }
+
+    public int getSid() {
+        return sid;
+    }
+
+    public void setSid(int sid) {
+        this.sid = sid;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+}   
+   

@@ -11,8 +11,8 @@ package com.hospital.model;
  */   
 public class Record {
       int treat;
+    int phone;     
     String name;
-   int phone;
    String dob;
    String problem;
    String docName;
@@ -23,12 +23,15 @@ public class Record {
     //create default constructor
 
     public Record() {
+       
+        
     }
     //create parameterized constructor 
-    public Record(int treat, String name, int phone, String dob, String problem, String docName, String medicine, String test, String bookingDate) {
+
+    public Record(int treat, int phone, String name, String dob, String problem, String docName, String medicine, String test, String bookingDate) {
         this.treat = treat;
-        this.name = name;
         this.phone = phone;
+        this.name = name;
         this.dob = dob;
         this.problem = problem;
         this.docName = docName;
@@ -36,8 +39,10 @@ public class Record {
         this.test = test;
         this.bookingDate = bookingDate;
     }
-    
+
+      
     //create getter setter
+
     public int getTreat() {
         return treat;
     }
@@ -46,20 +51,20 @@ public class Record {
         this.treat = treat;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getPhone() {
         return phone;
     }
 
     public void setPhone(int phone) {
         this.phone = phone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDob() {
@@ -109,7 +114,5 @@ public class Record {
     public void setBookingDate(String bookingDate) {
         this.bookingDate = bookingDate;
     }
-
-  
 
 }

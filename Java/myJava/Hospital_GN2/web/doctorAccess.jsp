@@ -87,9 +87,9 @@
                         </tr><!-- display patient output ends -->  
                     <div class="column-count">    
                         <tr>
-                            <td colspan="2"><textarea name="treat" rows="4" cols="50%" placeholder="Prescribe treatment here"></textarea></td>
+                            <td colspan="2"><textarea name="medicine" value="" rows="4" cols="50%" placeholder="Prescribe treatment here"></textarea></td>
                         <br/>
-                        <td colspan="2"><textarea name="test" rows="4" cols="50%" placeholder="Prescribe test here"></textarea></td>                         
+                        <td colspan="2"><textarea name="test" value="" rows="4" cols="50%" placeholder="Prescribe test here"></textarea></td>                         
                         </tr><!-- doctor input ends --> 
                     </div><!-- div end column-count -->
                     <div class="tfoot">

@@ -1,58 +1,67 @@
+package com.ttafsd.controller;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hospital.controller;
 
-import com.hospital.model.MyConnection;
+import com.ttafsd.model.Student;
+import com.ttafsd.model.StudentQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author GEORGE JNR
- */
-public class BookingServlet extends HttpServlet {
+public class UpdateStudent extends HttpServlet {
+int sid;
+String firstname;
+String lastname;
+int score;
 
-   int phone;
-   String name;
-   String dob;
-   String problem;
-   String docName;
-   String bookingDate;
-   
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            phone = Integer.parseInt(request.getParameter("phone"));
-            String pname = request.getParameter("pname");
-            dob = request.getParameter("dob");
-            problem = request.getParameter("problem");
-            docName = request.getParameter("docName");
-            bookingDate = request.getParameter("bdate");
-         
-         {
-                Connection con = MyConnection.connect();
-                Statement stmt = con.createStatement();
-                int insertRecord = stmt.executeUpdate("insert into record(phone,name dob, problem,bookingDate) values('"+phone+"',"+name+",'"+dob+"','"+problem+"','"+bookingDate+"')");
-                request.setAttribute("phone", phone);
-                request.getRequestDispatcher("bookings.jsp").forward(request, response);
-            }
-        } 
-        catch(Exception ex) {
-               System.out.println("Booking error :"+ex);
-        }
-    }
+       try {
+            PrintWriter out = response.getWriter();
+            sid =Integer.parseInt(request.getParameter("sid"));
+            score =Integer.parseInt(request.getParameter("score"));
+            
+        //update Student score where sid = sid
+  
+        int r = StudentQuery.update(sid, score);   
+        
+        if(r==1)
+        {
+         out.print("Student record updated succesfully");
+         request.getRequestDispatcher("display.jsp").include(request,response);
+        }//if ends
+        
+        else{
+            out.print("Error. Cannot update record");
+            request.getRequestDispatcher("update.jsp").include(request,response);
+        }//else ends
+        
+            
+        }//tryends
+         catch(Exception ex)
+        {
+            System.out.println("Servlet Error :"+ex);
+        }//catch ends
+       
+    }//processRequest ends
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

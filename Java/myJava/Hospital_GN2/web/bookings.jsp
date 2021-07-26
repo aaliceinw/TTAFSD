@@ -36,7 +36,7 @@
             </div>
     
          <div class="form">
-             <form action="preg" method="post"></form>
+             <form action="book" method="post"></form>
        <fieldset>
         <legend>
             <center> <h3>Patient Bookings</h3></center>
@@ -46,8 +46,13 @@
       int phone = Integer.parseInt(request.getAttribute("phone").toString());
       Connection con = MyConnection.connect();
                 Statement stmt = con.createStatement();
-                //int insertRecord = stmt.executeUpdate("insert into record(name, phone, dob, problem, docName, bookingDate) values('"+name"', '"+phone+"','"+dob+"','"+problem+"','"+docName+"','"+bookingDate+"');
-        String name,dob,problem,docName,bookingDate;       
+                //int insertRecord = stmt.executeUpdate("insert into record(phone, name,dob, problem, docName, bookingDate) values('"+phone"', '"+name+"','"+dob+"','"+problem+"','"+docName+"','"+bookingDate+"');
+                
+                 String name;
+                 String dob;
+                 String problem;
+                 String docName;
+                 String bookingDate;       
 
                 ResultSet rs = stmt.executeQuery("select * from record where phone="+phone);
                 %>
@@ -55,8 +60,8 @@
                 <%
                 if(rs.next())
                 {
+                    phone = rs.getInt("phone");   
                     name=rs.getString("name");
-                    phone = rs.getInt("phone");
                    dob = rs.getString("dob");
                    problem= rs.getString("problem");
                    docName=rs.getString("docName");
@@ -64,8 +69,8 @@
                    
   %>
                     <tr>
-                        <td><%= name%></td>
                         <td><%= phone%></td>
+                        <td><%= name%></td>
                         <br/>
                         <td><%= dob%></td>
                         <td><%= problem%></td>
@@ -76,7 +81,7 @@
                            }
                 
       %>
-                </table>
+                </table> 
 
           </div>
        </fieldset>
