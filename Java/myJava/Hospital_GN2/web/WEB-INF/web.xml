@@ -62,7 +62,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BookingServlet</servlet-name>
-        <url-pattern>/book</url-pattern>
+        <url-pattern>/booking</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Patient Records</title>
+        <title>Patient History</title>
 
 
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
@@ -24,21 +24,13 @@
       <div id="menu">
         <ul>
           <li><a class="current" href="index.jsp">Home</a></li>
-          <li><a href="bookings.jsp" target="f1">Bookings</a></li>
-         <!-- <li><a href="treatment.jsp">Treatments</a></li> -->
-          <li><a href="displayRecords.jsp">Treatments</a></li>
+          <li><a href="displayRecords.jsp" width="20px">Patient History</a></li>
         </ul>
       </div>
     </div>
   </div> 
     
-    <center>
-
-        
-       
-        
-        
-        
+       <center>  
         <!--Database code to display all records-->
         <%
         try
@@ -49,13 +41,25 @@
         ResultSet rs = stmt.executeQuery(qry);//execute query
         %>
         <!Database code to display all records in a table from ResultSet in browser>
-        <table   border="4" padding="10"><br/><br/><center><h2> Patient Records</h2></center> <br/><br/>
+        <table   border="4" padding="10"><br/><center><h5> Patient Records</h5></center><<br/><form>
         <%    
                 //get one by one record from ResultSet
                 while(rs.next())
                 {
         %>            
-                    <tr>
+ <thead>
+                                        <tr>
+                                            <th width="5px">No</th>
+                                            <th width="30px">Phone</th>
+                                            <th>Name</th>
+                                            <th width="10%">DOB</th>
+                                            <th>Problem</th>
+                                            <th>Doctor</th>
+                                            <th>Treatment</th>
+                                            <th>Test</th>
+                                            <th>Book</th>
+                                        </tr><!-- DAccess th content ends -->
+                <tr>
                         <td><%= rs.getInt(1)%></td>
                         <td><%= rs.getString(2)%></td>
                         <td><%= rs.getInt(3)%></td>
@@ -70,7 +74,7 @@
                     
                 }//while ends
         %>
-            </table>       
+               </table>       
         <%        
             }//try ends
             catch(Exception ex)
