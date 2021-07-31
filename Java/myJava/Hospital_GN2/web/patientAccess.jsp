@@ -9,9 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Patient Access</title>
-        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
- <link rel="stylesheet" type="text/css" href="formstyle.css" media="screen" />
+        <title>Patient Booking</title>
+        <link rel="stylesheet" type="text/css" href="formstyle.css" media="screen" />
     </head>
     <body>
         <div id="main_container">
@@ -20,19 +19,11 @@
                 <div class="right_header">
                     <div class="top_menu"> <a href="login.jsp" class="login">login</a><a href="logout" class="sign_up">Logout</a> </div>
                     <div id="menu">
-                        <ul>
-                            <li><a class="current" href="index.jsp">Home</a></li>
-                            <li><a href="displayRecords.jsp" width="20px">Patient History</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div id="middle_box">
                 <div class="middle_box_content"><img src="images/banner_content.jpg" alt="" /></div>
             </div>
-                            <center> 
+        
   
-              
+              <div class="form">
               
              <%
              String name = request.getAttribute("name").toString();
@@ -45,7 +36,7 @@
 
                   <fieldset>
         <legend>
-           <h3> Patient Access Form</h3>
+           <h3> Patient Booking Form</h3>
           
         </legend>
 
@@ -81,18 +72,14 @@
            Booking Date: <input type="date" name="bookingDate">
 
                 <br/>
-                
-            <input  type="submit" value="Book">
-            <input  type="reset" value="Clear">
+
+                <input type="submit" value="Submit Booking" name="book" />
+                <input type="reset" value="Clear Form" name="reset" />
                      </div>
                 
        </fieldset>
     </form>                                     
   </div>   
-      <div id="footer">
-    <div class="copyright"> <img src="images/footer_logo.gif" alt="" /> </div>
-    <div class="center_footer">&copy; Medical Clinic 2008. All Rights Reserved</div>
-
-   
+              </div>
     </body>
 </html>
