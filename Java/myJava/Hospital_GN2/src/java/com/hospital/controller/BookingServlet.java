@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -52,9 +53,15 @@ public class BookingServlet extends HttpServlet {
                 request.getRequestDispatcher("bookings.jsp").forward(request, response);
             }
         } 
-        catch(Exception ex) {
+        catch(IOException ex) {
                System.out.println("Booking error :"+ex);
-        }
+        } catch (NumberFormatException ex) {
+            System.out.println("Booking error :"+ex);
+       } catch (SQLException ex) {
+           System.out.println("Booking error :"+ex);
+       } catch (ServletException ex) {
+           System.out.println("Booking error :"+ex);
+       }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

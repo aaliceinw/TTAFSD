@@ -13,7 +13,7 @@
     <body>
                 <div id="main_container">
             <div class="header">
-                <div id="logo"><a href="#"><img src="images/logo.png" alt="" width="162" height="54" border="0" /></a></div>
+                <div id="logo"><a href="index.jsp"><img src="images/logo.png" alt="" width="162" height="54" border="0" /></a></div>
                 <div class="right_header">
                     <div class="top_menu"> <a href="login.jsp" class="login">login</a><a href="logout" class="sign_up">Logout</a> </div>
                     <div id="menu">
@@ -47,15 +47,6 @@
       String bookingDate = request.getParameter("bookingDate");
       Connection con = MyConnection.connect();
                 Statement stmt = con.createStatement();
-               
-           int insertRecord = stmt.executeUpdate("insert into record(name, phone, dob, problem, docName,bookingDate) values('"+name+"','"+phone+"','"+dob+"','"+problem+"','"+docName+"','"+bookingDate+"')");
-       // String name;
-        //int phone;
-        //String dob;
-       // String problem;
-       // String docName;
-       // String bookingDate;       
-
                 ResultSet rs = stmt.executeQuery("select * from record where phone="+phone);
                 %>
                 <table border="1">

@@ -60,9 +60,9 @@ public class PregServlet extends HttpServlet {
         
     }//try ends
          catch(IOException ex){
-            System.out.println("Oops!..something went wrong"+ex);
+            System.out.println("<h1>Oops!..something went wrong</h1>"+ex);
         } catch (NumberFormatException ex) {
-            System.out.println("<h1><h1>Oops!..enter numbers only.</h1></h1>"+ex);
+            System.out.println("<h1>Oops!..enter numbers only.</h1>"+ex);
          } //catch ends
          catch (ServletException ex) {
              System.out.println("<h1>Oops!..something went wrong</h1>"+ex);

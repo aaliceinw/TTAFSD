@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ConsultServlet extends HttpServlet {
 
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -28,32 +27,32 @@ public class ConsultServlet extends HttpServlet {
        int phone;
        String medicine;
        String test;
-          
-       phone = Integer.parseInt(request.getParameter("phone")); 
+       phone = Integer.parseInt(request.getParameter("phone"));
       medicine = request.getParameter("medicine");
         test= request.getParameter("test");
              System.out.println(phone);
              System.out.println(medicine);
              System.out.println(test);
-        int r = DoctorQuery.update(phone,medicine, test);
-             
-        
+        int r = DoctorQuery.update(phone,medicine,test);
           if(r==1)
             {
                 out.print("Patient record updated succesfully");
-                request.getRequestDispatcher("doctorAccess.jsp").include(request, response);
-            } // ends if 
-            
+                request.getRequestDispatcher("displayRecords.jsp").include(request, response);
+            } // ends if
             else
             {
-              out.print("Something wrong... update unsuccessful");  
-                request.getRequestDispatcher("doctorAccess.jsp").include(request, response);
+              out.print("Something wrong... update unsuccessful");
+                request.getRequestDispatcher("displayRecords.jsp").include(request, response);
             } //ends else
         }
-         catch(Exception ex)
+         catch(IOException ex)
          {
-             System.out.println("Consult error :"+ex);
-         }
+             System.out.println("<h1>Consult error1 :</h1>"+ex);
+         } catch (NumberFormatException ex) {
+             System.out.println("<h1>Consult error2 :</h1>"+ex);
+        } catch (ServletException ex) {
+            System.out.println("<h1>Consult error 3:</h1>"+ex);
+        }
     }
 
 

@@ -1,18 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.hospital.model;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
-
-/**
- *
- * @author joanlaine
- */
 public class DoctorQuery {
     //1. Insert Doctor record
     public static int insert(Doctor d)
@@ -39,10 +28,7 @@ public class DoctorQuery {
         }//catch ends
         return row_insert;
     }//insert ends
-
     //2.Validate existing user
-   
-    
 ////2. update -> int
 //    public static int update(int sid , int up_score)
 //    {
@@ -51,19 +37,19 @@ public class DoctorQuery {
 //        {
 //            Connection con = MyConnection.connect();//get connection
 //            Statement stmt = con.createStatement();
-//            
+//
 //            String qry = "update doctor set score="+up_score+" where sid="+sid;;
-//            
+//
 //            row_update = stmt.executeUpdate(qry);
 //        }
 //        catch(Exception ex)
 //        {
 //            System.out.println("Update Error :"+ex);
 //        }
-//        
+//
 //        return row_update;
 //    }
-//    
+//
 //    //3. delete -> int
 //    public static int delete(int sid)
 //    {
@@ -72,39 +58,32 @@ public class DoctorQuery {
 //        {
 //            Connection con = MyConnection.connect();//get connection
 //            Statement stmt = con.createStatement();
-//            
+//
 //            String qry = "delete from student where sid="+sid;
-//            
+//
 //            row_delete = stmt.executeUpdate(qry);
 //        }
 //        catch(Exception ex)
 //        {
 //            System.out.println("Delete Error :"+ex);
 //        }
-//        
+//
 //        return row_delete;
-//    }    
-//    
-
+//    }
+//
     public static int update(int phone , String medicine, String test) {
-        
     int uprow=0;
     try{
-        
-        //update record table[medicine and test] for given phone 
+        //update record table[medicine and test] for given phone
         Connection con = MyConnection.connect();//get connection
             Statement stmt = con.createStatement();
-            
-            String qry = "update record set medicine="+medicine+", test="+test+" where phone="+phone;;
-            
-            uprow = stmt.executeUpdate(qry);
-        
+            String qry2= "update record set medicine='"+medicine+"', test='"+test+"' where phone="+phone;
+            uprow = stmt.executeUpdate(qry2);
     }
     catch(Exception ex)
     {
         System.out.println("update error :"+ex);
     }
     return uprow;
-    
     }
 }//class ends

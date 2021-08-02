@@ -9,7 +9,7 @@
 <body>
 <div id="main_container">
   <div class="header">
-    <div id="logo"><a href="#"><img src="images/logo.png" alt="" width="162" height="54" border="0" /></a></div>
+    <div id="logo"><a href="index.jsp"><img src="images/logo.png" alt="" width="162" height="54" border="0" /></a></div>
     <div class="right_header">
         <div class="top_menu"> <a href="index.jsp" class="index">Home</a><a href="login.jsp" class="login">login</a> <a href="register.jsp" class="sign_up">Register</a> </div>
     </div>
