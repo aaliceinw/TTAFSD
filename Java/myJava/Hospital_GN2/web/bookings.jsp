@@ -19,7 +19,6 @@
                     <div id="menu">
                         <ul>
                             <li><a class="current" href="index.jsp">Home</a></li>
-                            <li><a href="displayRecords.jsp" width="20px">Patient History</a></li>
                         </ul>
                     </div>
                 </div>
@@ -28,11 +27,11 @@
                 <div class="middle_box_content"><img src="images/banner_content.jpg" alt="" /></div>
             </div>
         
-        <center
+                    <center>
        
          <div class="table">
                 <div class="form">
-             <form action="booking" method="post">    <center         
+             <form action="booking" method="post">        
         <legend>
            <h3> Patient Booking Confirmation</h3>
         </legend>
@@ -86,11 +85,12 @@
                            }
                 
       %>
-                                    </form>
-                               </table>
+                                   
+                               </table>      
                             </fieldset>
+                                 </form>
                                 </div>
-                                    
+                                </div>    
                             </center>
     </body>
 </html>

@@ -2,7 +2,6 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="com.hospital.model.MyConnection"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,31 +15,25 @@
     <div id="logo"><a href="index.jsp"><img src="images/logo.png" alt="" width="162" height="54" border="0" /></a></div>
     <div class="right_header">
         <div class="top_menu"> <a href="login.jsp" class="login">login</a>  <a href="logout" class="sign_up">Logout</a> </div>
-     <!-- <div id="menu">
+     <div id="menu">
         <ul>
           <li><a class="current" href="index.jsp">Home</a></li>
-          <li><a href="bookings.jsp" target="f1">Bookings</a></li>
-         <!-- <li><a href="treatment.jsp">Treatments</a></li>
-          <li><a href="displayRecords.jsp">Treatments</a></li>
     </ul>
-      </div>-->
+      </div>
     </div>
   </div>
   <div id="middle_box">
     <div class="middle_box_content"><img src="images/banner_content.jpg" alt="" /></div>
     </div>
-<!--
-        <div class="iframe" align="right">
-<iframe name="f1" height="600px" width="74%" ></iframe>
-</div>  -->
          <center>
              <%
              String name = request.getAttribute("name").toString();
              request.setAttribute("name",name);
              %>
-        <div class="form">
+             <div class="form">
         <form action="booking" method="post">
             <h1> Patient Access Form</h1>
+            <fieldset>
             <table border="1">
                 <tr>
                     <td>Patient Name:</td>
@@ -51,12 +44,9 @@
                     <td>Date of Birth: <input type="date" name="dob" value="" /></td>
                 </tr>
                 <tr>
-                    <td>Problem:<textarea name="problem" rows="4" cols="20">
-                        </textarea> </td>
-<!--                        <td>Select Doctor:<select name="docid" value ="">
-                            </select> </td>
-                </tr->
-                      -->
+                    <td>Problem:<textarea name="problem" rows="4" cols="20"></textarea> </td>
+                </tr>
+
                      <%
        Connection con = MyConnection.connect();
        Statement stmt = con.createStatement();
@@ -83,14 +73,11 @@
                     <td><input id="s1" type="submit" value="Book" /></td>
                     <td><input id="s1" type="reset" value="Clear" /></td>
                 </tr>
-        </table>
-</form>
-  </div>
-    </center>
+       </table>      
+                            </fieldset>
+                                 </form>
+                                </div>
+                                </div>    
+                            </center>
     </body>
-    <div id="footer">
-    <div class="copyright"> <img src="images/footer_logo.gif" alt="" /> </div>
-    <div class="center_footer">&copy; Medical Clinic 2008. All Rights Reserved</div>
-  </div>
-</div>
 </html>
